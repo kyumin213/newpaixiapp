@@ -1,0 +1,79 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/me",
+    "pages/topic/topic",
+    "pages/wallet/wallet",
+    "pages/walletDetails/walletDetails",
+    "pages/walletExchange/walletExchange",
+    "pages/walletExchangeResult/walletExchangeResult",
+    "pages/walletGetCash/walletGetCash",
+    "pages/walletGetCashResult/walletGetCashResult",
+    "pages/couponList/couponList",
+    "pages/recordSendOut/recordSendOut",
+    "pages/recordReceived/recordReceived",
+    "pages/recordJoin/recordJoin",
+    "pages/giftRecordJoin/giftRecordJoin",
+    "pages/giftRecordDetails/giftRecordDetails",
+    "pages/giftRecordReceive/giftRecordReceive",
+    "pages/logistics/logistics",
+    "pages/special/special",
+    "pages/productDetails/productDetails",
+    "pages/login/login"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "name": "packageA",
+      "pages": [
+        "pages/about/about",
+        "pages/protocol/protocol",
+        "pages/refund/refund",
+        "pages/message/message",
+        "pages/collection/collection",
+        "pages/activityList/activityList",
+        "pages/activityDice/activityDice",
+        "pages/activityDiceHelp/activityDiceHelp",
+        "pages/activityPintu/activityPintu",
+        "pages/activityPintuHelp/activityPintuHelp",
+        "pages/activityAnswer/activityAnswer",        
+        "pages/activityAnswerGameCenter/activityAnswerGameCenter",
+        "pages/assistanceActivityAnswer/assistanceActivityAnswer",
+        "pages/activityResult/activityResult"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "派喜",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f4f4f4",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#CCCCCC",
+    "selectedColor": "#333333",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "selectedIconPath": "icon/home-on.png",
+        "iconPath": "icon/home.png",
+        "pagePath": "pages/index/index",
+        "text": "派喜"
+      },
+      {
+        "selectedIconPath": "icon/cart-on.png",
+        "iconPath": "icon/cart.png",
+        "pagePath": "pages/topic/topic",
+        "text": "专题"
+      },
+      {
+        "selectedIconPath": "icon/user-on.png",
+        "iconPath": "icon/user.png",
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]
+  }
+}

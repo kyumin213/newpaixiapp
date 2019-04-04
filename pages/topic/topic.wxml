@@ -1,0 +1,12 @@
+<view class="container">
+  <!-- 专题滑动列表  -->
+  <view class='specialSlide'>
+    <swiper class='slider' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" previous-margin="20rpx" next-margin="40rpx">
+      <block wx:for="{{topics}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{item.pictureCover}}" style='{{!imgLoading?"filter: blur(10px)":""}}' lazy-load='true' catchtap='gotoSpecial' data-index="{{index}}" bindload="imgLoadComplete"/>
+          </swiper-item>
+      </block>
+    </swiper>
+  </view> 
+</view>

@@ -1,0 +1,23 @@
+/* pages/topic/topic.wxss */
+.specialSlide {
+  width: 100%;
+  height: 800rpx;
+  overflow: hidden;
+}
+.slider {
+  height: 800rpx;
+  /* width: 670rpx; */
+}
+.slider swiper-item {
+  width: 670rpx;
+}
+.specialSlide image{
+  width: 670rpx;
+  height: 800rpx;
+  border-radius: 26rpx; 
+  margin-left: 20rpx;
+  float: left;
+}
+.index {
+  padding-bottom: 80rpx;
+}
