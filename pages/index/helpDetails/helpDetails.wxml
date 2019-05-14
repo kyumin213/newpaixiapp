@@ -1,0 +1,120 @@
+<!--pages/index/helpDetails/helpDetails.wxml-->
+<view>
+  <view class="topBox"></view>
+  <!-- 头部 -->
+  <view class='myheadImg'>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class='fz30 colf helpTxt'>快来帮我砍价，获得1元送礼</view>
+  <view class='rulesBtn' catchtap='showModel'>
+    <text class='colr'>活动规则</text>
+    <text class='colr rolesIcon'>?</text>
+  </view>
+  <!-- 砍价信息 -->
+  <view class='bargainBox'>
+    <view class='fz26 col3 countDown'>
+      <text>砍价倒计时：</text>
+      <text class='colf bg-col hour'>23</text> 时
+      <text class='colf bg-col minute'>28</text> 分
+    </view>
+    <!-- <view class='fz36 col3 fw progress'>砍价进行中
+    </view> -->
+    <view>
+      <image class="goodsImg"></image>
+    </view>
+    <view class='fz30 col3 goodsName'>vivo x27 雀羽蓝&粉黛金</view>
+    <view class='progressBar'>
+      <view class='bg-col cancelBar'></view>
+    </view>
+    <view class='priceBox'>
+      <view class="col3">原价¥1980</view>
+      <view class="col3">1元送礼</view>
+    </view>
+    <view class='fz28 alreadyBargain'>已砍价190.00元</view>
+  </view>
+  <view class='bg-col colf fz30 inviteFriend' wx:if="{{!bargainStatus}}" catchtap='barshowModel'>帮好友砍价领红包</view>
+  <view class='colf fz30 inviteFriend cancelBtn' wx:else>砍价已完成</view>
+  <view class='colf fz30 inviteFriend prePay'>我也要1元送礼</view>
+  <view class="fz30 col3 bargainList">砍价琅琊榜
+    <text class='bg-col listLeft'></text>
+    <text class='bg-col listRight'></text>
+  </view>
+  <view>
+    <view class='items'>
+      <view class='itemLeft'>
+        <view>
+          <image class='headImg'></image>
+        </view>
+        <view>
+          <view class='fz26 col3 friName'>凉凉送给自己</view>
+          <view class='col9'>2019-04-20 19:04:05</view>
+        </view>
+      </view>
+      <view class='fz30 colr'>砍掉13.50元</view>
+    </view>
+    <view class='items'>
+      <view class='itemLeft'>
+        <view>
+          <image class='headImg'></image>
+        </view>
+        <view>
+          <view class='fz26 col3 friName'>凉凉送给自己</view>
+          <view class='col9'>2019-04-20 19:04:05</view>
+        </view>
+      </view>
+      <view class='fz30 colr'>砍掉13.50元</view>
+    </view>
+    <view class='items'>
+      <view class='itemLeft'>
+        <view>
+          <image class='headImg'></image>
+        </view>
+        <view>
+          <view class='fz26 col3 friName'>凉凉送给自己</view>
+          <view class='col9'>2019-04-20 19:04:05</view>
+        </view>
+      </view>
+      <view class='fz30 colr'>砍掉13.50元</view>
+    </view>
+  </view>
+  <view class='footer'>关注“派喜Prise”微信公众号，领取更多福利</view>
+</view>
+<!-- 活动规则弹窗 -->
+<view class='bgModel' wx:if="{{chooseSize}}">
+  <view class='modelShow' animation="{{animationData}}">
+    <view class='fz30 colf bg-col roleTitle'>活动规则</view>
+    <view class='closeBox' catchtap='hideModal'>
+      <image class='closeIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417033852909504763.png'></image>
+    </view>
+
+    <view class='fz26 col3 activeRolesTxt'>
+
+      1、本次秒杀活动为中国电信天翼用户专享。 2、活动期间使用任何舞弊行为的用户一经发现，即刻取消秒杀活动资格。 3、每日秒杀的礼品数量有限，秒完即止。秒杀礼品库存数量在秒杀过程中实时变化，秒杀成功与否以实际结果为准。 4、每名用户每天可成功参与一次秒杀，活动期间每名用户最高可成功秒杀5次。
+
+    </view>
+    <view class='btnList'>
+      <view class="fz30 bg-col colf submit" catchtap='hideModal'>确定</view>
+    </view>
+  </view>
+</view>
+<!-- 砍价成功弹窗 -->
+<view class='bgModel' wx:if="{{bargainSuccess}}">
+  <view class='sucModelShow' animation="{{animationData}}">
+    <view class='closeBox' catchtap='barhideModal'>
+      <image class='closeIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417033852909504763.png'></image>
+    </view>
+    <view>
+      <image class="succIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190514103725236386702.png'></image>
+    </view>
+    <view class='fz36 col3 sucTxt'>
+      <text>成功砍价</text>
+      <text class="sucPrice">9.5</text>
+      <text>元</text>
+    </view>
+    <view class='fz36 col3 getRed'>并获得等额红包奖励</view>
+    <view class='btnList'>
+      <view class="fz30 colr submit" catchtap='wallet'>前往钱包</view>
+      <view class="fz30 bg-col colf submit" catchtap='barhideModal'>确定</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+/* pages/topic/science/science.wxss */
+
+.imgBox {
+  height: 386rpx;
+  margin: 0 30rpx;
+}
+
+.topImg {
+  width: 100%;
+  height: 386rpx;
+  background-size: cover;
+  border-radius: 12rpx;
+}
+
+.scienceTit {
+  margin: 42rpx 50rpx 0 50rpx;
+  padding-bottom: 36rpx;
+  border-bottom: 2rpx solid #dedede;
+}
+
+.title {
+  font-size: 36rpx;
+  margin-bottom: 26rpx;
+}
+
+.timeIcon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.disFlex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.times {
+  margin-left: 26rpx;
+}
+
+/* 内容 */
+
+.scienceDes {
+  margin: 34rpx 50rpx 0 50rpx;
+  line-height: 56rpx;
+  font-size: 28rpx;
+  padding-bottom: 160rpx;
+}
+
+/* 底部 */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+
+.footerList {
+  height: 128rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50rpx 0 70rpx;
+  border-top: 2rpx solid #dedede;
+}
+.backBtn{
+  font-size: 26rpx;
+}
+.shareBtn {
+  width: 240rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius: 36rpx;
+  font-size: 30rpx;
+  padding: 0;
+  margin: 0;
+}

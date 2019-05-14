@@ -3,35 +3,42 @@
   <!--基本信息  -->
   <view class='userinfo'>
     <view class='userinfo-left'>
-      <view>
-        <block wx:if="{{isLogin}}">
-          <view class="userinfo-avatar"><open-data type="userAvatarUrl"></open-data></view>
-        </block>
-        <block wx:else>
-          <image class="userinfo-avatar" src="https://image.prise.shop/images/2018/07/26/1532587944531157.png" background-size="cover"></image>
-        </block>
-      </view>
-      <view>
-        <block wx:if="{{isLogin}}">
-          <open-data type="userNickName"  class="userinfo-nickname"></open-data>
-          <block wx:if="{{userPhone==null || userPhone=='000' || userPhone==''}}">
-            <view class='phone' bindtap='bindPhone'>绑定手机号码</view>
+      <view class="userLeft">
+        <view>
+          <block wx:if="{{isLogin}}">
+            <view class="userinfo-avatar">
+              <open-data type="userAvatarUrl"></open-data>
+            </view>
           </block>
           <block wx:else>
-            <view class='phone' bindtap='bindPhone'>{{userPhone}}</view>
+            <image class="userinfo-avatar" src="https://image.prise.shop/images/2018/07/26/1532587944531157.png" background-size="cover"></image>
           </block>
-        </block>
-        <block wx:else>
-          <view bindtap='gotoLogin'>
-            <view class="userinfo-nickname">登录</view>
-            <view class='phone'>登录后查看订单</view>
-          </view>
-        </block>  
-      </view>  
+        </view>
+        <view>
+          <block wx:if="{{isLogin}}">
+            <open-data type="userNickName" class="userinfo-nickname"></open-data>
+            <block wx:if="{{userPhone==null || userPhone=='000' || userPhone==''}}">
+              <view class='phone' bindtap='bindPhone'>绑定手机号码</view>
+            </block>
+            <block wx:else>
+              <view class='col9 phone' bindtap='bindPhone'>{{userPhone}}</view>
+            </block>
+          </block>
+          <block wx:else>
+            <view bindtap='gotoLogin'>
+              <view class="userinfo-nickname">登录</view>
+              <view class='phone'>登录后查看订单</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class='userRight' catchtap='birthdayWish'>
+        <image class='birIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190514023631987414359.png'></image>
+      </view>
     </view>
-  </view> 
+  </view>
   <!-- 我的钱包 -->
-  <view class='view-row'>
+  <!-- <view class='view-row'>
     <view class='bottom-item' bindtap='goMoneyPackage'>
       <view class="bottom-item-left bigtitle ml40">
         我的钱包
@@ -43,30 +50,94 @@
         <image src="../../images/mine_list_go.png"></image>
       </view>
     </view>
-  </view>  
+  </view>   -->
   <!-- 礼物记录 -->
   <view class='myorder'>
     <view class='menu'>
       <view class='bigtitle'>礼物记录</view>
-      <view class='all' bindtap='goRecordList' data-index='1'>查看礼物记录<image src="../../images/mine_list_go.png"></image></view>
+      <view class='all' bindtap='goRecordList' data-index='1'>
+        <text class='jt'></text>
+        <!-- <image src="../../images/mine_list_go.png"></image> -->
+      </view>
     </view>
-    <view class='line686'></view>
+    <!-- <view class='line686'></view> -->
     <view class='order-list'>
-      <view class='order-item record' bindtap='goRecordList' data-index='1'>
-        <image src='https://image.prise.shop/images/2018/08/09/1533802565008852.png'></image>
-        我送出的
+      <view class='order-item' bindtap='goRecordList' data-index='1'>
+        <view>
+          <image class='record' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416062505318269673.png'></image>
+        </view>
+        <view>送出的</view>
       </view>
-      <view class='order-item record' bindtap='goRecordListReceived' data-index='2'>
-        <image src='https://image.prise.shop/images/2018/08/09/1533802567761946.png'></image>
-        我收到的     
+      <view class='order-item' bindtap='goRecordListReceived' data-index='2'>
+        <view>
+          <image class='record' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416062623782685699.png'></image>
+        </view>
+        <view>收到的</view>
       </view>
-      <view class='order-item record' bindtap='goRecordListJoin' data-index='3'>
-        <image src='https://image.prise.shop/images/2018/08/09/1533802562324440.png'></image>
-        我参与的
+      <view class='order-item' bindtap='goRecordListJoin' data-index='3'>
+        <view>
+          <image class='record' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416062643626256900.png'></image>
+        </view>
+        <view>抽奖的</view>
       </view>
     </view>
   </view>
-  <view class='view-row'>
+  <view class='serverTile'>功能服务</view>
+  <view class='itemList'>
+    <view class='items'>
+      <view class='serverList' bindtap='bargain'>
+        <view>
+          <image class="qbIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190514023512746538063.png'></image>
+        </view>
+        <view class='fz28'>一元送礼</view>
+      </view>
+      <view class='serverList' bindtap='goMoneyPackage'>
+        <view>
+          <image class="qbIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416064646340898895.png'></image>
+        </view>
+        <view class='fz28'>钱包</view>
+      </view>
+      <view class='serverList' bindtap='goCoupon'>
+        <view>
+          <image class="qbIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416064715668312924.png'></image>
+        </view>
+        <view class='fz28'>优惠券</view>
+      </view>
+
+    </view>
+    <view class='items'>
+      <view class='serverList' bindtap='goMessageList'>
+        <view>
+          <image class="qbIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416064800452662861.png'></image>
+        </view>
+        <view class='fz28'>消息中心</view>
+      </view>
+      <view class='serverList'>
+        <button open-type='contact' class="bottom-item btn-service">
+          <view>
+            <image class="qbIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416064820085836805.png'></image>
+          </view>
+          <view class='fz28'>客服</view>
+        </button>
+      </view>
+      <view class='serverList' bindtap='goCollection'>
+        <view>
+          <image class="qbIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416064738557334066.png'></image>
+        </view>
+        <view class='fz28'>收藏栏</view>
+      </view>
+
+    </view>
+    <view class='items'>
+      <view class='serverList' bindtap='goAbout'>
+        <view>
+          <image class="qbIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416064837123188694.png'></image>
+        </view>
+        <view class='fz28'>联系我们</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='view-row'>
     <view class='bottom-item' bindtap='goCoupon'>
       <view class="bottom-item-left">
         我的优惠券
@@ -120,5 +191,5 @@
         <image src="../../images/mine_list_go.png"></image>
       </view>
     </view>
-  </view>
+  </view> -->
 </view>

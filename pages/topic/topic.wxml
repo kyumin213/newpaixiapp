@@ -1,12 +1,22 @@
-<view class="container">
+<view>
+  <view class='title'>发现专题</view>
+  <view class='titleDes'>专题派对，小派分享给您的主题礼品！</view>
   <!-- 专题滑动列表  -->
   <view class='specialSlide'>
-    <swiper class='slider' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" previous-margin="20rpx" next-margin="40rpx">
+    <swiper class='slider' bindchange="swiperChange" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" previous-margin="48rpx" next-margin="52rpx">
       <block wx:for="{{topics}}" wx:key="{{index}}">
-          <swiper-item>
-            <image src="{{item.pictureCover}}" style='{{!imgLoading?"filter: blur(10px)":""}}' lazy-load='true' catchtap='gotoSpecial' data-index="{{index}}" bindload="imgLoadComplete"/>
-          </swiper-item>
+        <swiper-item>
+          <image src="{{item.pictureCover}}" style='{{!imgLoading?"filter: blur(10px)":""}}' lazy-load='true' catchtap='gotoSpecial' data-index="{{index}}" bindload="imgLoadComplete" />
+        </swiper-item>
       </block>
     </swiper>
-  </view> 
+  </view>
+  <view class='botBox'>
+    <view class='col-3 holiday'>{{name}}</view>
+    <view class='holidayDes'>{{bewrite}}</view>
+    <view class='timeBox'>
+      <image class='timeIcon' src='../../images/dateL.png'></image>
+      <text class='colr'>{{beginTime}}</text>
+    </view>
+  </view>
 </view>

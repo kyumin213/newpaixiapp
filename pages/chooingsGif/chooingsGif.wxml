@@ -1,0 +1,39 @@
+<!--pages/chooingsGif/chooingsGif.wxml-->
+<view class="{{loadStatus==0?'show':'hidden'}}">
+  <view class="titles">
+    <view class='col3 fw titleTxt'>{{problem}}</view>
+    <view class='iconBox'>
+      <image class="imgIcon" src='../../images/zhicon.png'></image>
+    </view>
+  </view>
+  <scroll-view scroll-y style="height:{{scrollHeight}}">
+    <view class='itemList'>
+      <block wx:for="{{tabsList}}" wx:key="{{index}}">
+        <view class="col3 items {{currentTab==item.id?'active':''}}" data-name="{{item.attributeName}}" data-pid="{{item.parentId}}" data-id="{{item.id}}" catchtap="selectTab">{{item.attributeName}}</view>
+      </block>
+      <!-- <view class="col3 items {{currentTab==1?'active':''}}" data-id="1" catchtap="selectTab">兄弟</view>
+      <view class="col3 items {{currentTab==2?'active':''}}" data-id="2" catchtap="selectTab">闺蜜</view>
+      <view class="col3 items {{currentTab==3?'active':''}}" data-id="3" catchtap="selectTab">朋友</view>
+      <view class="col3 items {{currentTab==4?'active':''}}" data-id="4" catchtap="selectTab">父母</view> -->
+      <!-- <view wx:if="{{moreShow==true}}">
+        <view class="col3 items {{currentTab==1?'active':''}}" data-id="1" catchtap="selectTab">兄弟</view>
+        <view class="col3 items {{currentTab==2?'active':''}}" data-id="2" catchtap="selectTab">闺蜜</view>
+        <view class="col3 items {{currentTab==3?'active':''}}" data-id="3" catchtap="selectTab">朋友</view>
+        <view class="col3 items {{currentTab==4?'active':''}}" data-id="4" catchtap="selectTab">父母</view>
+      </view> -->
+    </view>
+  </scroll-view>
+  <!-- <view class='more' bindtap='moreAnswer' wx:if="{{moreShow==true}}">更多答案</view> -->
+  <view class='progress'>
+    <view class='proStatus'>
+      <text class='col3 fz26 inpro'>答题中</text>
+      <text class='colr fw fz26'>{{titleNumber}}/{{totalNum}}</text>
+    </view>
+    <view class='proCon'>
+      <view class='bg-col proItem' style='width:{{100/totalNum*(titleNumber)}}%'></view>
+    </view>
+  </view>
+</view>
+<view class='loadBox' wx:if="{{loadStatus==1}}">
+  <view class='fz30 col9'>暂无推荐礼品</view>
+</view>

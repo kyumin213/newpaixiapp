@@ -1,23 +1,80 @@
 /* pages/topic/topic.wxss */
+
+/* 发现专题头部 */
+page{
+  width: 100%;
+  height: 100%;
+  
+}
+.ml{
+  margin-left: 48rpx;
+}
+
+.title {
+  width: 100%;
+  font-size: 36rpx;
+  color: #333;
+  padding:24rpx 48rpx 18rpx 48rpx;
+  font-weight: 600;
+  font-family: 'HiraginoSansGB-W6';
+  box-sizing: border-box;
+}
+.titleDes{
+  padding:0 48rpx 54rpx 48rpx;
+  font-size: 24rpx;
+  color: #999;
+  font-family: HiraginoSansGB-W3;
+  box-sizing: border-box;
+}
+
 .specialSlide {
   width: 100%;
-  height: 800rpx;
+  height: 680rpx;
   overflow: hidden;
 }
+
 .slider {
-  height: 800rpx;
+  height: 680rpx;
   /* width: 670rpx; */
 }
+
 .slider swiper-item {
-  width: 670rpx;
+  width: 580rpx;
 }
-.specialSlide image{
-  width: 670rpx;
-  height: 800rpx;
-  border-radius: 26rpx; 
-  margin-left: 20rpx;
+
+.specialSlide image {
+  width: 600rpx;
+  height: 680rpx;
+  border-radius: 12rpx;
+  /* margin-left: 40rpx; */
   float: left;
 }
+
 .index {
   padding-bottom: 80rpx;
+}
+/* 专题底部 */
+.botBox{
+  /* padding-top: 54rpx; */
+  padding: 54rpx 48rpx 0 48rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.holiday{
+  font-size: 36rpx;
+}
+.holidayDes{
+  color: #999;
+  font-size: 24rpx;
+  margin: 18rpx 0 24rpx 0;
+}
+.timeBox{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.timeIcon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 26rpx;
 }

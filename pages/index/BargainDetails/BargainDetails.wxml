@@ -1,0 +1,95 @@
+<!--pages/index/BargainDetails/BargainDetails.wxml-->
+<view>
+  <view class="bg-col topBox"></view>
+  <!-- 砍价信息 -->
+  <view class='bargainBox'>
+    <view class='fz26 col3 countDown' wx:for="{{countDownList}}" wx:key="countDownList">
+      <text>砍价倒计时：</text>
+      <text class='colf bg-col hour'>{{item.hou}}</text> 时
+      <text class='colf bg-col minute'>{{item.min}}</text> 分
+      <text class='colf bg-col minute'>{{item.sec}}</text> 秒
+    </view>
+    <view class='fz36 col3 fw progress'>砍价进行中
+      <!-- <text class='proLeft'></text>
+    <text class='proRight'></text> -->
+    </view>
+    <view class='fz30 col3 inviteTxt'>快邀请小伙伴来砍价，尽享1元送礼</view>
+    <view class='progressBar'>
+      <view class='bg-col cancelBar'></view>
+    </view>
+    <view class='priceBox'>
+      <view class="col3">原价¥1980</view>
+      <view class="col3">1元送礼</view>
+    </view>
+    <view class='fz28 alreadyBargain'>已砍价190.00元</view>
+  </view>
+  <view class='bg-col colf fz30 inviteFriend'>邀请好友帮忙砍价</view>
+  <view class='colr fz30 inviteFriend prePay'>现价支付（¥1790.00）</view>
+  <view class="fz30 col3 bargainList">砍价琅琊榜
+    <text class='bg-col listLeft'></text>
+    <text class='bg-col listRight'></text>
+  </view>
+  <view>
+    <view class='items'>
+      <view class='itemLeft'>
+        <view>
+          <image class='headImg'></image>
+        </view>
+        <view>
+          <view class='fz26 col3 friName'>凉凉送给自己</view>
+          <view class='col9'>2019-04-20 19:04:05</view>
+        </view>
+      </view>
+      <view class='fz30 colr'>砍掉13.50元</view>
+    </view>
+    <view class='items'>
+      <view class='itemLeft'>
+        <view>
+          <image class='headImg'></image>
+        </view>
+        <view>
+          <view class='fz26 col3 friName'>凉凉送给自己</view>
+          <view class='col9'>2019-04-20 19:04:05</view>
+        </view>
+      </view>
+      <view class='fz30 colr'>砍掉13.50元</view>
+    </view>
+    <view class='items'>
+      <view class='itemLeft'>
+        <view>
+          <image class='headImg'></image>
+        </view>
+        <view>
+          <view class='fz26 col3 friName'>凉凉送给自己</view>
+          <view class='col9'>2019-04-20 19:04:05</view>
+        </view>
+      </view>
+      <view class='fz30 colr'>砍掉13.50元</view>
+    </view>
+  </view>
+  <view class='footer'>关注“派喜Prise”微信公众号，领取更多福利</view>
+</view>
+<!-- 弹窗 -->
+<view class='bgModel' wx:if="{{chooseSize}}">
+  <view class='modelCon' animation="{{animationData}}">
+    <view class='closeBox' catchtap='hideModal'>
+      <image class='closeIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417033852909504763.png'></image>
+    </view>
+    <view>
+      <image class='statusIcon' wx:if="{{status==1}}" src="https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190513055220960980958.png"></image>
+      <image class='statusIcon' wx:if="{{status==2}}" src="https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190514111701339824768.png"></image>
+      <image class='statusIcon' wx:if="{{status==3}}" src="https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190514111720118889025.png"></image>
+    </view>
+    <view class='fz36 col3 statusTxt' wx:if="{{status==1}}">砍价进行中</view>
+    <view class='fz36 col3 statusTxt' wx:if="{{status==2}}">砍价已完成</view>
+    <view class='fz36 col3 statusTxt' wx:if="{{status==3}}">砍价已结束</view>
+    <view class='fz26 col9 already'>你已砍价
+      <text class="colTxt">1800.00元</text>，需支付
+      <text class="colTxt">1800.00元</text>
+    </view>
+    <view class='btnList'>
+      <button class="fz26 colr bargainBtn {{status==2 || status==3?'unbor':'bor'}}" disabled='{{disabled}}'>继续砍价</button>
+      <view class="fz26 bg-col colf payBtn">马上支付</view>
+    </view>
+  </view>
+</view>

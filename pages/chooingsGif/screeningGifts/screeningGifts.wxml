@@ -1,0 +1,10 @@
+<!--pages/chooingsGif/screeningGifts/screeningGifts.wxml-->
+<view class='loadBox'>
+  <view class='imgBox'>
+    <image class="loadImg" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190418110957991611450.gif'></image>
+    <view class='proLoading'>
+      <view class='bg-col animateLoad'></view>
+    </view>
+    <view class='colr fz26'>小派正在为您筛选礼物ing</view>
+  </view>
+</view>

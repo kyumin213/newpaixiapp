@@ -1,0 +1,60 @@
+<!--pages/topic/topicDetails/topicDetails.wxml-->
+<view>
+  <view class='topBg'>
+    <!-- <view class='imgBox'></view> -->
+    <view class="imgBox">
+      <image class='bgImg' src='{{background}}'></image>
+    </view>
+    <view class='tops'>
+      <view class='topLeft'>
+        <image class='imgIcon' src='../../../images/dateB.png'></image>
+        <text class='topicTxt'>{{beginTime}}</text>
+      </view>
+
+    </view>
+    <view class='topBom'>
+      <view class='colf topTitle'>{{name}}礼品推荐</view>
+      <view class="colf topDes">{{bewrite}}</view>
+    </view>
+  </view>
+  <view class='topRight' bindtap='science'>
+    <view class="colf kp">节日科普</view>
+    <view>
+      <image class='kpIcon' src='../../../images/kpIcon.png'></image>
+    </view>
+  </view>
+  <view class='content'>
+    <view>
+      <block wx:for="{{productList}}" wx:key="{{index}}">
+        <block wx:for="{{item.productSpecialVos}}" wx:key="{{index}}">
+          <view class='shopItem' bindtap='productDetail' data-id="{{item.id}}">
+            <view>
+              <image class='itemImg' src="{{item.pictureCover}}"></image>
+            </view>
+            <view>
+              <view>
+                <view class="col3 shopName">{{item.title}}</view>
+                <text class="col9 shopDes">{{item.sellingPoint}}</text>
+              </view>
+              <view class='priceItem'>
+                <text class='colr fz30'>￥{{item.basePrice}}</text>
+                <text class='col9 oldPrice'>￥{{item.beforePrice}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+  <view class='bottom-tips' wx:if="{{productList[0].productSpecialVos.length>=4}}">
+    <view class='more'>更多节日惊喜 更多送礼诀窍</view>
+    <view>关注公众号:“派喜” 等你来撩</view>
+  </view>
+  <view class='footer'>
+    <view class="footerBom">
+      <view class="nextTop" catchtap='nextTopic'>下一专题</view>
+      <!-- <view class="nextTop"></view> -->
+      <button class="bg-col fz30 shareBtn" open-type='share'>分享专题</button>
+    </view>
+  </view>
+</view>

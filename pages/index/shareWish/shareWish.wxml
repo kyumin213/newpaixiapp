@@ -1,0 +1,105 @@
+<!--pages/index/shareWish/shareWish.wxml-->
+<view>
+  <view class='imgBox'>
+    <image class="bgImgs" src="{{conBg}}"></image>
+  </view>
+  <view>
+    <!-- <view class="contenBox" style="background-image:url({{conBg}})"> -->
+    <view class="contenBox">
+      <view>
+        <view class="conTop">
+          <!-- <view class="imgBor">
+          </view> -->
+          <view class='headImg' style='border-color:{{bcol}}'>
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+          <view class="fz30 col3 userNames ">
+            <!-- <open-data type="userNickName" class="userinfo-nickname"></open-data> -->
+            <view class="fz30 col3 userinfo-nickname {{currentTab==3?'bgName':''}}" style='color:{{nameCol}}'>{{userName}}</view>
+          </view>
+          <view class="fz28 bir {{currentTab==2?'bgOne':''}}">{{myBir}}
+            <text class="{{currentTab==5?'colf':''}}">是我的生日</text>
+          </view>
+          <view class="fz28 bir {{currentTab==5?'colTxt':''}}" wx:if="{{currentTab==5}}">{{myBir}}
+            <text class="{{currentTab==5?'colf':''}}">是我的生日</text>
+          </view>
+        </view>
+        <view class='conTxt'>
+          <block wx:for="{{wisthList}}" wx:key="{{index}}">
+            <view class="items {{currentTab==5?'itemCol':''}}">{{index+1}}. {{item.wishText}}</view>
+          </block>
+          <!-- <view class="fz28 items {{currentTab==5?'itemCol':''}}">1. 渴望在生日那天收到椰子鞋</view>
+          <view class="fz28 items {{currentTab==5?'itemCol':''}}">1. 渴望在生日那天收到椰子鞋</view>
+          <view class="fz28 items {{currentTab==5?'itemCol':''}}">1. 渴望在生日那天收到椰子鞋</view>
+          <view class="fz28 items {{currentTab==5?'itemCol':''}}">1. 渴望在生日那天收到椰子鞋</view> -->
+        </view>
+        <view class='createTime'>
+          创建于{{created}}
+        </view>
+        <view>
+          <image class="codeImg" src="{{codeImg}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class='isnull'></view>
+    <view class="themeBox">
+      <view class='themeList'>
+        <view class="themeItem bg1" id='1' data-id="1" data-theme="{{bg1}}" catchtap='sitchTab'>
+          <!-- <view class="colf {{currentTab==1?'hidden':'show'}}" id='1' data-id="1" data-theme="{{bg1}}" catchtap='sitchTab'>默认</view> -->
+          <view class="{{currentTab==1?'show':'hidden'}}">
+            <view class="selected">
+              <text class='check'></text>
+            </view>
+          </view>
+        </view>
+        <view class="themeItem bg2" id='2' data-id="2" data-theme="{{bg2}}" catchtap='sitchTab'>
+          <!-- <view class="colf {{currentTab==2?'hidden':'show'}}" id='2' data-id="2" data-theme="{{bg2}}" catchtap='sitchTab'>童话</view> -->
+          <view class="{{currentTab==2?'show':'hidden'}}">
+            <view class="selected">
+              <text class='check'></text>
+            </view>
+          </view>
+        </view>
+        <view class="themeItem bg3" id='3' data-id="3" data-theme="{{bg3}}" catchtap='sitchTab'>
+          <!-- <view class="colf {{currentTab==3?'hidden':'show'}}" id='3' data-id="3" data-theme="{{bg3}}" catchtap='sitchTab'>简笔</view> -->
+          <view class="{{currentTab==3?'show':'hidden'}}">
+            <view class="selected">
+              <text class='check'></text>
+            </view>
+          </view>
+        </view>
+        <view class="themeItem bg4" id='4' data-id="4" data-theme="{{bg4}}" catchtap='sitchTab'>
+          <!-- <view class="colf {{currentTab==4?'hidden':'show'}}" id='4' data-id="4" data-theme="{{bg4}}" catchtap='sitchTab'>梦幻</view> -->
+          <view class="{{currentTab==4?'show':'hidden'}}">
+            <view class="selected">
+              <text class='check'></text>
+            </view>
+          </view>
+        </view>
+        <view class="themeItem bg5" id='5' data-id="5" data-theme="{{bg5}}" catchtap='sitchTab'>
+          <!-- <view class="colf {{currentTab==5?'hidden':'show'}}" id='5' data-id="5" data-theme="{{bg5}}" catchtap='sitchTab'>电玩</view> -->
+          <view class=" {{currentTab==5?'show':'hidden'}}">
+            <view class="selected">
+              <text class='check'></text>
+            </view>
+          </view>
+        </view>
+        <view class="themeItem bg6" id='6' data-id="6" data-theme="{{bg6}}" catchtap='sitchTab'>
+          <!-- <view class="colf {{currentTab==6?'hidden':'show'}}" id='6' data-id="6" data-theme="{{bg6}}" catchtap='sitchTab'>色彩</view> -->
+          <view class="{{currentTab==6?'show':'hidden'}}">
+            <view class="selected">
+              <text class='check'></text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='bg-col colf preserveBtn' bindtap='saveImg'>保存</view>
+    </view>
+  </view>
+  <!-- canvas -->
+  <view class='canvas-box'>
+    <block wx:if="{{isShowCanvas}}">
+      <canvas canvas-id="shareCanvas" style="width:{{winWidth}};height:{{winHeight}}"></canvas>
+    </block>
+  </view>
+</view>

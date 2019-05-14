@@ -1,0 +1,62 @@
+<!--pages/receiveGift/receiveGift.wxml-->
+<view wx:if="{{receive==false}}">
+  <view class='bgTop'>
+    <view class='topTxt'>
+      <view class='fw fz36 colf'>来自Ta的祝福</view>
+      <view class='colf mt20'>填写地址，领取好友送你的礼物吧！</view>
+    </view>
+  </view>
+  <view class='box2'>
+    <view class='headImg'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='fz30 col3 userNames'>
+      <open-data type="userNickName" class="userinfo-nickname"></open-data>送出一份礼物
+    </view>
+    <view class='sayBox'>
+      <view class='sayLeft'>
+        <image class='yhIcon' src='../../images/wsrleft.png'></image>
+      </view>
+      <!-- <view class='sayDes'> -->
+      <view class='sayDes'>
+        <!-- <text>你还想对Ta说</text> -->
+        <textarea class='col3 fz30 sayTxt' value="{{sayCon}}" name="sayCon">
+        </textarea>
+      </view>
+      <!-- </view> -->
+      <view class='sayRight'>
+        <image class='yhIcon' src='../../images/wsrright.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='box3'>
+    <view class='imgItem'>
+      <view>
+        <image class='giftImg' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190418035627247986333.png'></image>
+      </view>
+      <view>
+        <view class='fz30 col3 goodName'>vivo x27 雀羽蓝&粉黛金</view>
+        <view class='goodNum'>共1份</view>
+      </view>
+    </view>
+    <view class='fz30 receiveBtn bg-col' wx:if="{{guo==false}}">领取礼物</view>
+    <view class='btnList hidden' wx:else>
+      <view class='fz30 btnItem bgc'>过时未领取</view>
+      <view class='fz30 paybtnItem bg-col'>我也送一份</view>
+    </view>
+    <view class='col9'>* 温馨提示：礼物卡超过15天未领取，将自动退款</view>
+  </view>
+</view>
+<view wx:else class='successBox'>
+  <view class='successCon'>
+    <view>
+      <image class='giftIcon' src='../../images/giftIcon.png'></image>
+    </view>
+    <view class='colr fw fz36'>礼物领取成功</view>
+    <view class='col9 fz26 txts'>小派正在加速为您打包礼品！</view>
+    <view class='btnList'>
+      <view class="fz30 btnItem strollBg" bindtap='toIndex'>逛逛派喜</view>
+      <view class="fz30 paybtnItem bg-col">返回领礼页</view>
+    </view>
+  </view>
+</view>

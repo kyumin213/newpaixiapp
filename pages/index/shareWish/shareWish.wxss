@@ -1,0 +1,292 @@
+/* pages/index/shareWish/shareWish.wxss */
+
+/* 内容 */
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.imgBox {
+  /* margin: 0 108rpx; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 1334rpx;
+}
+
+.bgImgs {
+  width: 100%;
+   height: 1334rpx;
+  /* margin: 0 108rpx; */
+  position: absolute;
+  top: 0;
+  background-size: cover;
+}
+
+.contenBox {
+  /* margin: 0 108rpx; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1000rpx;
+  padding-bottom: 266rpx;
+  margin-bottom: 266rpx;
+  background-size: cover;
+  /* height: auto; */
+}
+
+.bgImg {
+  background-image: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190428112235616122082.jpg) no-repeat;
+  background-size: cover;
+}
+
+.con {
+  /* min-height: 750rpx; *//* margin: 0 40rpx auto 40rpx; */
+  border-radius: 16rpx;
+  /* transform: translateY(142rpx); *//* padding-bottom: 20rpx; *//* margin-top: 200rpx; */
+}
+
+.createTime {
+  position: absolute;
+  /* top: 830rpx; */
+  bottom: 180rpx;
+  color: #888;
+  font-size: 20rpx;
+  margin: 58rpx 0 22rpx 90rpx;
+}
+
+.conTop {
+  text-align: center;
+  position: relative;
+  top: 194rpx;
+  left: 0;
+  /* margin-left: 290rpx; */
+}
+
+.headImg {
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  top: 12rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  /* margin-left: -92rpx; */
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10rpx solid #fff;
+}
+
+.imgBor {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+  border: 2rpx solid #000;
+  position: absolute;
+  top: -2rpx;
+  left: 50%;
+  margin-left: -102rpx;
+  /* margin-left: -104rpx; */
+}
+
+.userNames {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 38rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 216rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
+}
+
+.userinfo-nickname {
+  font-size: 38rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bir {
+  color: #000;
+  position: absolute;
+  top: 266rpx;
+  padding: 0 12rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.colTxt {
+  color: #00faeb;
+}
+
+.bgOne {
+  background: #3f4fa4;
+  color: #fff;
+}
+
+.bgName {
+  background: #000;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 4rpx;
+}
+
+.items {
+  color: #000;
+  margin-top: 36rpx;
+}
+
+.itemCol {
+  color: #fff;
+}
+
+.conTxt {
+  position: relative;
+  top: 570rpx;
+  margin: 0 90rpx 0 90rpx;
+}
+
+.isnull {
+  width: 100%;
+  height: 260rpx;
+}
+
+/* 切换主题 */
+
+.themeBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  /* height: 128rpx; */
+  width: 100%;
+  z-index: 0;
+}
+
+.themeList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 128rpx;
+  margin: 0 36rpx;
+  box-sizing: border-box;
+}
+
+.themeItem {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg1 {
+  background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190428033010355860188.jpg) no-repeat;
+  background-size: cover;
+}
+
+.bg2 {
+  background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190428033736126205052.jpg) no-repeat;
+  background-size: cover;
+}
+
+.bg3 {
+  background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190428033821866131393.jpg) no-repeat;
+  background-size: cover;
+}
+
+.bg4 {
+  background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190428033841433834640.jpg) no-repeat;
+  background-size: cover;
+}
+
+.bg5 {
+  background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190428033905102652870.jpg) no-repeat;
+  background-size: cover;
+}
+
+.bg6 {
+  background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190428033934126101200.jpg) no-repeat;
+  background-size: cover;
+}
+
+/* 保存按钮 */
+
+.preserveBtn {
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 20rpx 36rpx 28rpx 36rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+}
+
+.selected {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.check {
+  display: inline-block;
+  width: 26rpx;
+  height: 16rpx;
+  border-left: 4rpx solid #fd6592;
+  border-bottom: 4rpx solid #fd6592;
+  transform: rotate(-45deg);
+  margin-top: 10rpx;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 二维码 */
+
+.codeImg {
+  width: 148rpx;
+  height: 148rpx;
+  position: absolute;
+  /* top: 1194rpx; *//* top: 844rpx; */
+  bottom: -34rpx;
+  left: 50%;
+  margin-left: -74rpx;
+}
+
+.canvas-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 70%;
+  /* background: rgba(0, 0, 0, 0.2); */
+  background: #fff;
+  z-index: -3;
+  overflow-x: hidden;
+}
+
+.canvas-box canvas {
+  z-index: -3;
+  position: relative;
+}

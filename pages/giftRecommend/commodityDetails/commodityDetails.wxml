@@ -1,0 +1,146 @@
+<!--pages/giftRecommend/commodityDetails/commodityDetails.wxml-->
+<view class='content'>
+  <view class="commodImgBox">
+    <swiper class='slider' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" catchchange="swiperChange">
+      <block wx:for="{{bannerImgList}}" wx:key="{{index}}">
+        <swiper-item>
+          <image class="imgs" src='{{item}}' lazy-load='true'>
+          </image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='dots'>
+      <view>
+        <block wx:for="{{bannerImgList}}" wx:key="{{index}}">
+          <text class="dotItems {{index==cur?'dotActive':''}}"></text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 商品信息 -->
+  <view class='productCon'>
+    <view class='commodCon'>
+      <view class='nameBox'>
+        <view class='fz30 col3'>{{productDetailData.title}}</view>
+        <button class='shareBtn' open-type='share'>
+          <image class="shareIcon" src='../../../images/shareIcon.png'></image>
+        </button>
+      </view>
+      <view class='col9 des'>
+        {{productDetailData.sellingPoint}}
+      </view>
+      <view class='nameBox'>
+        <view>
+          <text class='colr fz36'>¥{{productDetailData.basePrice}}</text>
+          <text class='col9 originalPrice'>¥{{productDetailData.beforePrice}}</text>
+        </view>
+        <view class='selectedNum'>
+          {{productDetailData.sales}}人已选
+        </view>
+      </view>
+    </view>
+    <view class='serviceBox'>
+      <view class="serviceList">
+        <view class='col9 fz26 item1'>服务</view>
+        <block wx:for="{{servesList}}" wx:key="{{index}}">
+          <view class='icons'>
+          </view>
+          <view class='col3 fz26'>{{item.servesName}}</view>
+        </block>
+        <!-- <text class='icons'></text>
+      <view class='col3 fz26'>包邮包税</view> -->
+      </view>
+    </view>
+    <!-- 规格 -->
+    <view class='specsBox'>
+      <view class='specsFlex' catchtap='showModel'>
+        <view>
+          <text class='col9 fz26'>规格</text>
+          <text class='col3 fz26 choice'>请选择</text>
+        </view>
+        <view class='jt'></view>
+      </view>
+    </view>
+    <!-- 产品基本信息  -->
+    <view class='product-info'>
+      <text class='info-title'>产品信息</text>
+      <block wx:for="{{information}}" wx:key="index">
+        <view class='info-item'>
+          <text class='gray info-name'>{{item.infoName}}</text>
+          <text class='props'>{{item.value}}</text>
+        </view>
+      </block>
+    </view>
+    <!-- 图文详情  -->
+    <view class='details'>
+      <text class='info-title'>图文详情</text>
+      <block wx:for="{{detailsImgList}}" wx:key="index">
+        <image src="{{item}}" mode='widthFix' style='width:100%;' />
+      </block>
+    </view>
+  </view>
+</view>
+<view class='footersBox'>
+  <view class='footerList'>
+    <view catchtap='home'>
+      <image class='icons1' src='../../../images/homeIcon.png'></image>
+    </view>
+    <view>
+      <image class='icons2' src='../../../images/scIcon.png' wx:if="{{collect==false}}" catchtap='toogleCollect'></image>
+      <image class='icons2' src='../../../images/collectDetail.png' wx:else catchtap='toogleCollect'></image>
+    </view>
+    <view>
+      <button open-type='contact' class='conBtn'>
+        <image class='icons3' src='../../../images/kfIcon.png'></image>
+      </button>
+    </view>
+    <view class='bg-col fz30 selectThis' bindtap='selectShow'>选Ta啦</view>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view class='bgModel' wx:if="{{chooseSize}}">
+  <view class="model" animation="{{animationData}}">
+    <view class='use'>
+      <view>
+        <view class='close'>
+          <view>
+            <image class="goodsImg" src='{{skuImg}}'></image>
+          </view>
+          <view class="col-3 modelTitle">
+            <view>
+              <view class='col3 fz30 goodsNames'>{{productDetailData.title}}</view>
+              <view class='col9 lh'>{{productDetailData.sellingPoint}}</view>
+            </view>
+            <view class='closeBox' catchtap='hideModal'>
+              <image class='closeIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417033852909504763.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='goodsConBox'>
+          <view class='fz28 col3'>规格</view>
+          <view class='specList'>
+            <block wx:for="{{speciList}}" wx:key="{{index}}">
+              <view class="fz26 speciItem {{item.selected==true?'select':''}}" data-index='{{index}}' catchtap='selectSpec'>{{item.major}}</view>
+            </block>
+          </view>
+          <view class='fz28 col3 nums'>数量</view>
+          <view class='numShow'>
+            <button class='down' catchtap='downNum' disabled='{{disable}}'>
+              <text class='downIcon'></text>
+            </button>
+            <view class='numbers'>
+              <text class='col3 fz26'>{{nums}}</text>
+            </view>
+            <view class='bg-col adds' catchtap='addNums'>
+              <text class='addIcon'></text>
+              <text class='addIcons'></text>
+            </view>
+          </view>
+        </view>
+        <view class="modelBom">
+          <view class='bg-col colf cancelBtn' catchtap='packGift'>打包礼物</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

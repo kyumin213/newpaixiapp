@@ -1,0 +1,205 @@
+/* pages/topic/topicDetails/topicDetails.wxss */
+
+.fz30 {
+  font-size: 30rpx;
+}
+
+.topBg {
+  width: 100%;
+  height: 420rpx;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* background: #3f4fa5; *//* background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190416051855780163022.png) no-repeat; */
+}
+
+.imgBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 420rpx;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.bgImg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  filter: blur(16rpx);
+}
+
+.tops {
+  display: flex;
+  justify-content: space-between;
+  z-index: 99;
+}
+
+.topLeft {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40rpx 0 0 48rpx;
+}
+
+.imgIcon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.kpIcon{
+  width: 22rpx;
+  height: 18rpx;
+}
+.topicTxt {
+  color: #fff;
+  font-size: 24rpx;
+  margin-left: 26rpx;
+  font-family: 'HiraginoSansGB-W3';
+}
+
+.topRight {
+  position: absolute;
+  top: 36rpx;
+  right: 48rpx;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.kp {
+  margin-right: 12rpx;
+}
+
+.desItem {
+  display: block;
+  width: 22rpx;
+  height: 4rpx;
+  background: #fff;
+  margin: 4rpx 0;
+}
+
+.topBom {
+  margin: 63rpx 0 0 50rpx;
+}
+
+.topTitle {
+  font-size: 36rpx;
+  font-weight: 600;
+  margin-bottom: 18rpx;
+}
+
+.topDes {
+  margin-bottom: 30rpx;
+}
+
+/* 商品列表 */
+
+.content {
+  margin: -158rpx 30rpx 0 30rpx;
+  background: #fff;
+  height: auto;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
+  box-sizing: border-box;
+  /* padding-bottom: 130rpx; */
+}
+.pt{
+  padding-top: 16rpx;
+}
+
+.itemImg {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 2rpx;
+  /* background: #f5f5f5; */
+  margin-right: 36rpx;
+}
+
+.shopItem {
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+  padding: 34rpx 0;
+  margin: 0 46rpx;
+  border-bottom: 2rpx solid #e3e9f5;
+}
+.shopItem:first-child{
+  padding-top: 50rpx;
+}
+
+.shopName {
+  font-size: 30rpx;
+  margin: 20rpx auto;
+}
+
+.shopDes {
+  display: inline-block;
+  line-height: 30rpx;
+  margin-bottom: 40rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.priceItem {
+  display: flex;
+  align-items: flex-end;
+}
+
+.oldPrice {
+  margin-left: 44rpx;
+  text-decoration: line-through;
+}
+
+/* 底部分享 */
+
+.footer {
+  width: 100%;
+  height: 128rpx;
+  border-top: 2rpx solid #e3e9f5;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.footerBom {
+  height: 128rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50rpx 0 70rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.nextTop {
+  color: #666;
+  font-size: 26rpx;
+}
+
+.shareBtn {
+  width: 240rpx;
+  height: 72rpx;
+  text-align: center;
+  line-height: 72rpx;
+  color: #fff;
+  border-radius: 36rpx;
+  margin: 0;
+  padding: 0;
+}
+.bottom-tips{
+  height: 250rpx;
+  text-align: center;
+  margin-top: 54rpx;
+}
+.bottom-tips .more{
+  margin-bottom: 10rpx;
+}

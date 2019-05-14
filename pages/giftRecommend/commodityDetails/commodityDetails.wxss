@@ -1,0 +1,288 @@
+/* pages/giftRecommend/commodityDetails/commodityDetails.wxss */
+@import '../../giftRecommend/giftRecommend.wxss';
+
+page {
+  width: 100%;
+  height: 100%;
+  background: #f6f6f6;
+  box-sizing: borer-box;
+}
+
+.content {
+  padding-bottom: 108rpx;
+}
+
+.slider {
+  height: 750rpx;
+  position: relative;
+}
+
+.dots {
+  position: absolute;
+  top: 698rpx;
+  left: 50%;
+  z-index: 99;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+
+.dotItems {
+  display: inline-block;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #fff;
+  margin-right: 12rpx;
+}
+
+.dotActive {
+  width: 36rpx;
+  background: #fd6592;
+  border-radius: 6rpx;
+}
+
+.imgs {
+  width: 100%;
+  height: 750rpx;
+  background-size: cover;
+}
+
+/* 商品信息 */
+.productCon{
+  width: 100%;
+  box-sizing: border-box;
+}
+.commodCon {
+  padding: 40rpx 48rpx 48rpx 48rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.nameBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.des {
+  margin: 14rpx 0 30rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.originalPrice {
+  margin-left: 40rpx;
+}
+
+.shareIcon {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.selectedNum {
+  width: 168rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  color: #fff;
+  background: #909ff0;
+  border-radius: 18rpx;
+  text-align: center;
+}
+
+/* 服务 */
+
+.serviceBox {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.serviceList {
+  height: 108rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 50rpx;
+}
+
+/* .item1{
+  margin-right: 40rpx;
+} */
+
+.icons {
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ffb45c;
+  margin-right: 16rpx;
+  margin-left: 28rpx;
+  position: relative;
+}
+
+.left {
+  position: re;
+}
+
+.icons::before {
+  content: '';
+  position: absolute;
+  left: 8rpx;
+  top: 8rpx;
+  width: 12rpx;
+  height: 8rpx;
+  border-left: 2rpx solid #ffb45c;
+  border-bottom: 2rpx solid #ffb45c;
+  transform: rotate(-45deg);
+}
+
+/* 规格 */
+
+.specsBox {
+  width: 100%;
+  height: 108rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  /* margin-bottom: 110rpx; */
+}
+
+.specsFlex {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0 50rpx;
+}
+
+.jt {
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 2rpx solid #999;
+  border-right: 2rpx solid #999;
+  transform: rotate(45deg);
+}
+
+.choice {
+  margin-left: 40rpx;
+}
+
+.isnull {
+  width: 100%;
+  height: 94rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+/* 产品信息  */
+
+.product-info {
+  background: #fff;
+  overflow: hidden;
+  padding: 30rpx;
+  margin-top: 20rpx;
+}
+
+.info-title {
+  text-align: center;
+  display: block;
+  padding: 10rpx 0 30rpx;
+  font-size: 30rpx;
+}
+
+.info-item {
+  height: 38rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.info-name {
+  margin-right: 20rpx;
+  display: inline-block;
+}
+
+.props {
+  font-size: 26rpx;
+}
+
+/* 底部 */
+
+.footersBox {
+  width: 100%;
+  height: 108rpx;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 2rpx solid #dedede;
+}
+
+.footerList {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 50rpx 0 64rpx;
+}
+
+.selectThis {
+  width: 240rpx;
+  height: 72rpx;
+  text-align: center;
+  line-height: 72rpx;
+  color: #fff;
+  border-radius: 36rpx;
+}
+
+.icons1 {
+  width: 42rpx;
+  height: 50rpx;
+}
+
+.icons2 {
+  width: 50rpx;
+  height: 46rpx;
+}
+
+.icons3 {
+  width: 50rpx;
+  height: 48rpx;
+}
+
+/* 图文详情  */
+
+.details {
+  background: #fff;
+  margin-top: 20rpx;
+  padding-top: 30rpx;
+}
+
+.info-title {
+  text-align: center;
+  display: block;
+  padding: 10rpx 0 30rpx;
+  font-size: 30rpx;
+}
+
+.details image {
+  width: 100%;
+  display: block;
+}
+
+/* 分享按钮 */
+
+.shareBtn {
+  width: 100rpx;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.conBtn{
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}

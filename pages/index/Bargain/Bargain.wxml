@@ -1,0 +1,96 @@
+<!--pages/index/Bargain/Bargain.wxml-->
+<view wx:if="{{!isNull}}">
+  <view class='topBg'>
+    <!-- <view class='imgBox'></view> -->
+    <view class="imgBox">
+      <image class='bgImg' src='{{background}}'></image>
+    </view>
+    <view class='tops'>
+      <!-- <view class='topLeft'>
+        <image class='imgIcon' src='../../../images/dateB.png'></image>
+        <text class='topicTxt'>{{beginTime}}</text>
+      </view> -->
+
+    </view>
+    <view class='topBom'>
+      <view class='fz36 colf fw mb'>1元送礼活动专区</view>
+      <view class='colf fz24'>只需花1元，就可以赠送好友心仪好礼！</view>
+      <!-- <view class="colf topDes">{{bewrite}}</view> -->
+    </view>
+  </view>
+  <view class='topRight' bindtap='science'>
+    <view class="colf kp">活动规则</view>
+    <view>
+      <image class='kpIcon' src='../../../images/kpIcon.png'></image>
+    </view>
+  </view>
+  <view class='content'>
+    <view>
+      <!-- <block wx:for="{{productList}}" wx:key="{{index}}">
+        <block wx:for="{{item.productSpecialVos}}" wx:key="{{index}}">
+          <view class='shopItem' bindtap='productDetail' data-id="{{item.id}}">
+            <view>
+              <image class='itemImg' src="{{item.pictureCover}}"></image>
+            </view>
+            <view>
+              <view>
+                <view class="col3 shopName">{{item.title}}</view>
+                <text class="col9 shopDes">{{item.sellingPoint}}</text>
+              </view>
+              <view class='priceItem'>
+                <text class='colr fz30'>￥{{item.basePrice}}</text>
+                <text class='col9 oldPrice'>￥{{item.beforePrice}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block> -->
+      <view class='shopItem' bindtap='productDetail' data-id="{{item.id}}">
+        <view>
+          <image class='itemImg' src="{{item.pictureCover}}"></image>
+        </view>
+        <view>
+          <view>
+            <view class="col3 shopName">BOSE降噪蓝牙耳机</view>
+            <text class="col9 shopDes">无线耳机 QC30耳塞式蓝牙降噪耳麦</text>
+          </view>
+          <view class='priceItem'>
+            <view class='colr fz30'>￥1</view>
+            <view class='col9 oldPrice'>￥2960</view>
+          </view>
+        </view>
+      </view>
+      <view class='shopItem' bindtap='productDetail' data-id="{{item.id}}">
+        <view>
+          <image class='itemImg' src="{{item.pictureCover}}"></image>
+        </view>
+        <view>
+          <view>
+            <view class="col3 shopName">BOSE降噪蓝牙耳机</view>
+            <text class="col9 shopDes">无线耳机 QC30耳塞式蓝牙降噪耳麦</text>
+          </view>
+          <view class='priceItem'>
+            <view class='colr fz30'>￥1</view>
+            <view class='col9 oldPrice'>￥2960</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='bottom-tips' wx:if="{{listStatus==true}}">
+    <view class='more'>更多节日惊喜 更多送礼诀窍</view>
+    <view>关注公众号:“派喜” 等你来撩</view>
+  </view>
+  <!-- <view class='footer'>
+    <view class="footerBom">
+      <view class="nextTop"></view>
+      <button class="bg-col fz30 shareBtn" open-type='share'>分享专题</button>
+    </view>
+  </view> -->
+</view>
+<view class='isNull' wx:if="{{isNull}}">
+  <view class='nullBox'>
+    <view class="fz30 col9">敬请期待</view>
+    <view class="bg-col fz30 toIndx" bindtap='toIndx'>去首页逛逛</view>
+  </view>
+</view>

@@ -1,0 +1,148 @@
+/* pages/index/helpDetails/helpDetails.wxss */
+@import '../BargainDetails/BargainDetails.wxss';
+.topBox{
+  background: url(https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190418055557199317413.png) no-repeat;
+  background-size: cover;
+}
+.helpTxt{
+  position: absolute;
+  top: 98rpx;
+  left: 184rpx;
+}
+.myheadImg{
+  width: 120rpx;
+  height: 120rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 8rpx solid #fff;
+  position: absolute;
+  top: 44rpx;
+  left: 22rpx;
+}
+/* 规则按钮 */
+.rulesBtn{
+  width: 168rpx;
+  height: 48rpx;
+  border-radius: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  position: absolute;
+  top: 28rpx;
+  right: 30rpx;
+}
+.rolesIcon{
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  text-align: center;
+  line-height: 24rpx;
+  margin-left: 16rpx;
+  border-radius: 50%;
+  border: 2rpx solid #FD6592;
+}
+.bargainBox{
+  transform: translateY(-174rpx);
+  height: 640rpx;
+}
+.inviteFriend{
+  margin: -126rpx 72rpx 20rpx 72rpx;
+}
+.prePay{
+  margin-top: 0;
+  margin-bottom: 0;
+  background: #FFB45C;
+}
+/* 商品信息 */
+.goodsImg{
+  width: 180rpx;
+  height: 180rpx;
+  background: #ccc;
+  margin-top: 56rpx;
+}
+.goodsName{
+  margin: 32rpx auto 66rpx auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cancelBtn{
+  background: #ddd;
+}
+/* 弹窗 */
+.modelShow{
+  height: 690rpx;
+  margin: 194rpx 30rpx auto 30rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  position: relative;
+}
+.roleTitle{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.closeBox{
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  z-index: 99;
+}
+.activeRolesTxt{
+  margin: 28rpx 40rpx 78rpx 40rpx;
+  line-height: 48rpx;
+}
+.submit{
+  width: 240rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius: 36rpx;
+  margin: 0 auto;
+  border: 2rpx solid #FD6592;
+  box-sizing: border-box;
+}
+/* 砍价弹窗 */
+.sucModelShow{
+  height: 540rpx;
+  position: relative;
+  top: 270rpx;
+  margin: auto 76rpx;
+  border-radius: 12rpx;
+  background: #fff;
+}
+.sucModelShow .closeBox{
+  width: 104rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  text-align: center;
+}
+.succIcon{
+  width: 150rpx;
+  height: 150rpx;
+  /* background: #ccc; */
+  position: absolute;
+  left: 226rpx;
+  margin: 90rpx auto 102rpx auto;
+}
+.sucTxt{
+  position: absolute;
+  top: 270rpx;
+  left: 50%;
+  width: 340rpx;
+  height: auto;
+  text-align: center;
+  transform: translateX(-50%);
+}
+.getRed{
+  position: absolute;
+  top: 330rpx;
+  left: 50%;
+  width: 330rpx;
+  transform: translateX(-50%);
+}
+.sucPrice{
+  color: #FFB45C;
+}

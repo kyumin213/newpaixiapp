@@ -1,0 +1,301 @@
+/* pages/chooingsGif/chooingsGif.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.titles {
+  height: 140rpx;
+  margin: 32rpx 36rpx 0 54rpx;
+  background: #f8f8f8;
+  border-radius: 24rpx;
+  border-bottom-right-radius: 0;
+  position: relative;
+}
+
+.titleTxt {
+  padding: 42rpx 58rpx 62rpx 58rpx;
+  font-size: 36rpx;
+  animation: tit ease-in 0.4s;
+}
+
+.iconBox {
+  width: 68rpx;
+  height: 68rpx;
+  position: absolute;
+  top: -32rpx;
+  left: -32rpx;
+  border-radius: 50%;
+  background: #3f4fa5;
+  text-align: cente;
+}
+
+.imgIcon {
+  position: absolute;
+  top: 18rpx;
+  left: 7rpx;
+  width: 54rpx;
+  height: 32rpx;
+}
+
+/* 题目选项 */
+
+.items {
+  width: 308rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  border: 2rpx solid #dedede;
+  margin-top: 60rpx;
+  font-size: 30rpx;
+  transform: translate(0, 0);
+}
+.itemList{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 52rpx;
+  flex-wrap: wrap;
+}
+
+
+.itemList .items:nth-child(1) {
+  animation: item1 ease-in-out 0.3s;
+}
+
+.itemList .items:nth-child(2) {
+  animation: item2 ease-in-out 0.6s;
+}
+
+.itemList .items:nth-child(3) {
+  animation: item3 ease-in-out 0.8s;
+}
+
+.itemList .items:nth-child(4) {
+  animation: item4 ease-in-out 1s;
+}
+.itemList .items:nth-child(5) {
+  animation: item1 ease-in-out 0.3s;
+}
+
+.itemList .items:nth-child(6) {
+  animation: item2 ease-in-out 0.6s;
+}
+
+.itemList .items:nth-child(7) {
+  animation: item3 ease-in-out 0.8s;
+}
+
+.itemList .items:nth-child(8) {
+  animation: item4 ease-in-out 1s;
+}
+
+/* 进度条 */
+
+.progress {
+  /* margin: 224rpx 58rpx 98rpx 58rpx; */
+  position: fixed;
+  bottom: 98rpx;
+  left: 58rpx;
+  right: 58rpx;
+  background: #fff;
+}
+
+.proStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.proCon {
+  width: 100%;
+  height: 16rpx;
+  border-radius: 16rpx;
+  margin-top: 28rpx;
+  background: #fff;
+  border: 2rpx solid #FD6592;
+  position: relative;
+}
+
+.proItem {
+  width: 15%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 16rpx;
+}
+
+.fz26 {
+  font-size: 26rpx;
+}
+
+.active {
+  background: #fd6592;
+  color: #fff;
+  border-color: #fd6592;
+}
+
+.more {
+  color: #3f4fa5;
+  font-size: 30rpx;
+  width: 100%;
+  text-align: center;
+  margin-top: 76rpx;
+}
+
+/* 完成后动画 */
+.loadBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #f8f8f8;
+}
+
+.loadImg {
+  width: 420rpx;
+  height: 120rpx;
+}
+.proLoading{
+  height: 12rpx;
+  border-radius: 6rpx;
+  margin: 10rpx 0 50rpx 0;
+  background: #FAE6EE;
+  position: relative;
+}
+.animateLoad{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60rpx;
+  height: 12rpx;
+  border-radius: 6rpx;
+  animation: loading ease-in 2.4s infinite;
+}
+@keyframes loading{
+  from{
+    width: 0%
+  }
+  to{
+    width: 100%;
+  }
+}
+@-webkit-keyframes loading{
+  from{
+    width: 0%
+  }
+  to{
+    width: 100%;
+  }
+}
+
+/* 题目和答案动画 */
+
+@keyframes tit {
+  from {
+    transform: translate(0, -300rpx);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes tit {
+  from {
+    transform: translate(0, -300rpx);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes item1 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:1s; */
+  }
+}
+@-webkit-keyframes item1 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:1s; */
+  }
+}
+
+
+@keyframes item2 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:1.5s; */
+  }
+}
+@-webkit-keyframes item2 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:1.5s; */
+  }
+}
+
+
+@keyframes item3 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:2s; */
+  }
+}
+@-webkit-keyframes item3 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:2s; */
+  }
+}
+
+@keyframes item4 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:2.5s; */
+  }
+}
+
+@-webkit-keyframes item4 {
+  from {
+    transform: translate(500rpx, 0);
+  }
+
+  to {
+    transform: translate(0, 0);
+    /* transition-delay:2.5s; */
+  }
+}

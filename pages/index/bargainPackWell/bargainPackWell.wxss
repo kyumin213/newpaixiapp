@@ -1,0 +1,83 @@
+/* pages/index/bargainPackWell/bargainPackWell.wxss */
+@import '../../packWell/packWell.wxss';
+button{
+  padding: 0;
+  margin: 0;
+}
+.bargain{
+  background: #FFB45C;
+}
+.btnItem,.paybtnItem{
+  width: 278rpx;
+  text-align: center;
+}
+/* 弹窗 */
+.closeBox {
+  width: 104rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  text-align: center;
+  margin-left: 78rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.closeIcon {
+  width: 28rpx;
+  height: 28rpx;
+}
+.sucModelShow{
+  height: 540rpx;
+  position: relative;
+  top: 270rpx;
+  margin: auto 76rpx;
+  border-radius: 12rpx;
+  background: #fff;
+}
+.sucModelShow .closeBox{
+  width: 104rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  text-align: center;
+}
+.succIcon{
+  width: 150rpx;
+  height: 150rpx;
+  /* background: #ccc; */
+  position: absolute;
+  left: 226rpx;
+  margin: 90rpx auto 102rpx auto;
+}
+.sucTxt{
+  position: absolute;
+  top: 300rpx;
+  left: 50%;
+  width: 340rpx;
+  height: auto;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.sucPrice{
+  color: #FFB45C;
+}
+.submit{
+  width: 440rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  border-radius: 36rpx;
+  margin: 0 auto;
+  border: 2rpx solid #FD6592;
+  box-sizing: border-box;
+}
+.btnList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  right: 42rpx;
+  left: 42rpx;
+}

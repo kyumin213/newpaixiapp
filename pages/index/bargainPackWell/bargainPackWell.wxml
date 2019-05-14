@@ -1,0 +1,102 @@
+<!--pages/index/bargainPackWell/bargainPackWell.wxml-->
+<view>
+  <view class='bgTop'>
+    <view class='topTxt'>
+      <view class='fw fz36 colf'>礼物已打包</view>
+      <view class='colf mt20'>礼品已包好，赶紧支付送给好友吧！</view>
+    </view>
+  </view>
+  <view class='box2'>
+    <view class='headImg'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='fz30 col3 userNames'>
+      <open-data type="userNickName" class="userinfo-nickname"></open-data>送出一份礼物
+    </view>
+    <view class='sayBox'>
+      <view class='sayLeft'>
+        <image class='yhIcon' src='../../images/wsrleft.png' wx:if="{{sayStatus==true}}"></image>
+        <image class='yhIcon' src='../../images/ysrleft.png' wx:else></image>
+      </view>
+      <view class='sayDes'>
+        <view class='col3 fz30 sayComplate' wx:if="{{sayStatus==false}}">{{sayCon}}</view>
+        <input class='col3 fz30 sayTxt' wx:else maxlength='90' placeholder-style='color:#999' bindblur='sayStatus' placeholder='你还想对Ta说'>
+        </input>
+      </view>
+      <view class='sayRight'>
+        <image class='yhIcon' src='../../images/wsrright.png' wx:if="{{sayStatus==true}}"></image>
+        <image class='yhIcon' src='../../images/ysrright.png' wx:else></image>
+      </view>
+    </view>
+  </view>
+  <view class='box3'>
+    <block wx:for="{{itemList}}" wx:key="{{index}}">
+      <view class='imgItem'>
+        <view>
+          <image class='giftImg' src='{{item.productPicture}}'></image>
+        </view>
+        <view>
+          <view class='fz30 col3 goodName'>{{item.productTitle}}</view>
+          <view class='giftTag'>
+            <!-- <view class='goodNum'>共{{nums}}份</view> -->
+            <view class="goodNum pack {{open==1?'show':'hidden'}}">礼品包装</view>
+          </view>
+          <view class='numBox'>
+            <view class='col9 fz26 numTxt'>数量</view>
+            <view class='numShow'>
+              <view>
+                <button class='down' catchtap='downNum' disabled='{{disable}}' data-index="{{index}}">
+                  <text class='downIcon'></text>
+                </button>
+              </view>
+              <view class='numbers'>
+                <text class='col3 fz26'>{{item.num}}</text>
+              </view>
+              <view class='adds' catchtap='addNums' data-index="{{index}}">
+                <text class='addIcon'></text>
+                <text class='addIcons'></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class='packBox'>
+      <view>
+        <view class='col3 fz28'>礼品包装
+          <text class="colr">(15元/份)</text>
+        </view>
+      </view>
+      <view class="packBtn {{open==1?'bg-col':'closeBg'}}" catchtap='open'>
+        <text class="openIcon {{open==1?'bg-col':''}}"></text>
+        <text class="closepackIcon {{open==1?'openBg':'closeBg'}}"></text>
+      </view>
+    </view>
+    <view class='btnList'>
+      <view class='fz30 btnItem bargain'>1元送礼</view>
+      <button class='fz30 paybtnItem bg-col' catchtap='paymentBtn' disabled='{{dis}}'>原价支付
+        <!-- <text class='price'>(￥{{ordersPay}})</text> -->
+      </button>
+    </view>
+    <view class='col9 ff tc'>* 温馨提示：礼物卡超过15天未领取，将自动退款</view>
+  </view>
+</view>
+<!-- 限购弹窗 -->
+<view class='bgModel' wx:if="{{bargainSuccess}}">
+  <view class='sucModelShow' animation="{{animationData}}">
+    <view class='closeBox' catchtap='barhideModal'>
+      <image class='closeIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417033852909504763.png'></image>
+    </view>
+    <view>
+      <image class="succIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190514120859386527824.png'></image>
+    </view>
+    <view class='fz36 col3 sucTxt'>
+      <view class='fz36 col3'>活动商品限购<text class='colr'>1</text>次</view>
+    </view>
+    <view class='btnList'>
+      <!-- <view class="fz30 colr submit" catchtap='wallet'>前往钱包</view> -->
+      <view class="fz30 bg-col colf submit" catchtap='barhideModal'>确定</view>
+    </view>
+  </view>
+</view>

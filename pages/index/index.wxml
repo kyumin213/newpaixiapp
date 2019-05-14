@@ -1,3 +1,67 @@
 <view class="container">
-  <button bindtap='gotoActivity'>抽奖</button>
+  <!-- <button bindtap='gotoActivity'>抽奖</button> -->
+  <view class='imgBox'>
+
+  </view>
+  <!-- 智慧选礼 -->
+  <view class='itemBox'>
+    <view class='itemTitle'>
+      <text class='col-3 titles'>Ai智能选礼</text>
+      <text class='col9 des'>精准匹配，完善送礼</text>
+    </view>
+    <view class='itemList'>
+      <block wx:for="{{tabsList}}" wx:key="{{index}}">
+        <view class="items" catchtap='recommend' data-id="{{item.id}}" data-ids="{{item.id}}" data-name="{{item.attributeName}}" data-pid="{{item.parentId}}">
+          <view>
+            <image class="itemIcon" src='{{item.url}}'></image>
+          </view>
+          <view class='col-3 fz28'>{{item.attributeName}}</view>
+        </view>
+      </block>
+
+      <!-- <view class="items">
+        <view>
+          <image class="itemIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417100121011629420.png'></image>
+        </view>
+        <view class='col-3 fz28'>送子女</view>
+      </view>
+      <view class="items">
+        <view>
+          <image class="itemIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417100141941374839.png'></image>
+        </view>
+        <view class='col-3 fz28'>送情侣</view>
+      </view>
+      <view class="items">
+        <view>
+          <image class="itemIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417100252981261747.png'></image>
+        </view>
+        <view class='col-3 fz28'>送朋友</view>
+      </view> -->
+    </view>
+  </view>
+  <!-- 发现有趣 -->
+  <view>
+    <view class="col-3 fw findTit">发现有趣</view>
+    <view class="col9 findDes">每天都有免费礼品派送哟</view>
+  </view>
+  <view class='findBox'>
+    <view class="findList" bindtap='birthdayWish'>
+      <view>
+        <image class='findIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417101658638647181.png'></image>
+      </view>
+      <view>生日愿望</view>
+    </view>
+    <view class="findList" bindtap='gotoActivity'>
+      <view>
+        <image class='findIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417101715325813266.png'></image>
+      </view>
+      <view>抽奖送礼</view>
+    </view>
+    <view class="findList" catchtap='bargain'>
+      <view>
+        <image class='findIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417101728503503580.png'></image>
+      </view>
+      <view>1元送礼</view>
+    </view>
+  </view>
 </view>

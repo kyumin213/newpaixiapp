@@ -1,0 +1,113 @@
+<!--pages/giftRecommend/giftRecommend.wxml-->
+<view wx:if="{{isNull==false}}">
+  <view class="titleBox">
+    <view class="col3 fw fz36 mb20">为您推荐</view>
+    <view class="col9">根据您填写的问卷，推荐最合适的礼品！</view>
+  </view>
+  <!-- 商品图片展示 -->
+  <view>
+    <swiper class='slider' indicator-dots="{{indicatorDots}}" bindchange="swiperChange" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" previous-margin="48rpx" next-margin="52rpx">
+      <block wx:for="{{productList}}" wx:key="{{index}}">
+        <swiper-item catchtap="commodityDetails" data-id="{{item.relativeId}}">
+          <image class="imgs" src="{{item.pictureCover}}" lazy-load='true'>
+          </image>
+          <view class='operaList'>
+            <!-- <button class="shareBox" open-type='share'>
+              <image class='shareIcon' src='../../images/shareIcon.png'></image>
+            </button> -->
+            <view class='collectBox'>
+              <image class='collectIcon' src='../../images/uncollectIcon.png' wx:if="{{item.check==false}}" data-index="{{index}}" catchtap='toogleCollect' data-id="{{item.relativeId}}"></image>
+              <image class="collectIcon {{item.check==true?'activeShow':''}}" wx:if="{{item.check==true}}" data-index="{{index}}" src='../../images/collectIcon.png' catchtap='toogleCollect' data-id="{{item.relativeId}}"></image>
+            </view>
+          </view>
+        </swiper-item>
+        <!-- <swiper-item>
+          <image class="imgs" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190418023352998912679.png' lazy-load='true'></image>
+          <view class='operaList'>
+            <view class="shareBox">
+              <image class='shareIcon' src='../../images/shareIcon.png'></image>
+            </view>
+            <view class='collectBox'>
+              <image class='collectIcon' src='../../images/uncollectIcon.png' wx:if="{{collect==false}}" catchtap='collect'></image>
+              <image class='collectIcon' src='../../images/collectIcon.png' wx:else catchtap='collect'></image>
+            </view>
+          </view>
+        </swiper-item> -->
+      </block>
+    </swiper>
+  </view>
+  <!-- 商品信息 -->
+  <view class='goodsBox'>
+    <view class="col3 fw fz36 goodsName">{{title}}</view>
+    <view class="col9 goodsDes">{{sellingPoint}}</view>
+    <view class='curr'>
+      <view class="colr fw fz36">￥{{basePrice}}</view>
+      <view>
+        <block wx:for="{{productList}}" wx:key="{{index}}">
+          <text class="items {{index==cur?'active':''}}"></text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class='footerBox'>
+    <view class="footer">
+      <view class="col6 reselection" catchtap='toIndx'>重新选择</view>
+      <view class="bg-col setSelection" catchtap='selectProduct'>选Ta啦</view>
+    </view>
+  </view>
+  <!-- 弹窗 -->
+  <view class='bgModel' wx:if="{{chooseSize}}">
+    <view class="model" animation="{{animationData}}">
+      <view class='use'>
+        <view>
+          <view class='close'>
+            <view>
+              <image class="goodsImg" src='{{skuImg}}'></image>
+            </view>
+            <view class="col-3 modelTitle">
+              <view>
+                <view class='col3 fz30 goodsNames'>{{productDetailData.title}}</view>
+                <view class='col9 lh'>{{productDetailData.sellingPoint}}</view>
+              </view>
+              <view class='closeBox' catchtap='hideModal'>
+                <image class='closeIcon' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417033852909504763.png'></image>
+              </view>
+            </view>
+          </view>
+          <view class='goodsConBox'>
+            <view class='fz28 col3'>规格</view>
+            <view class='specList'>
+              <block wx:for="{{speciList}}" wx:key="{{index}}">
+                <view class="fz26 speciItem {{item.selected==true?'select':''}}" data-index='{{index}}' catchtap='selectSpec'>{{item.major}}</view>
+              </block>
+
+              <!-- <view class="fz26 speciItem {{selectCur==2?'select':''}}" data-id='2' catchtap='selectSpec'>雀羽蓝</view> -->
+            </view>
+            <view class='fz28 col3 nums'>数量</view>
+            <view class='numShow'>
+              <button class='down' catchtap='downNum' disabled='{{disable}}'>
+                <text class='downIcon'></text>
+              </button>
+              <view class='numbers'>
+                <text class='col3 fz26'>{{nums}}</text>
+              </view>
+              <view class='bg-col adds' catchtap='addNums'>
+                <text class='addIcon'></text>
+                <text class='addIcons'></text>
+              </view>
+            </view>
+          </view>
+          <view class="modelBom">
+            <view class='bg-col colf cancelBtn' catchtap='packGift'>打包礼物</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="isNull" wx:else>
+  <view class='nullBox'>
+    <view class="fz30 col9">暂无推荐礼品</view>
+    <view class="bg-col fz30 toIndx" bindtap='toIndx'>去首页逛逛</view>
+  </view>
+</view>

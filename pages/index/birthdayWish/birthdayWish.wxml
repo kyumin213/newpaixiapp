@@ -1,0 +1,86 @@
+<!--pages/index/birthdayWish/birthdayWish.wxml-->
+<view class='container'>
+  <view class='bgImg'>
+    <view class='wishBox'>
+      <view class='colf wishTitle'>生日愿望</view>
+      <view class='colf wishDes'>你的愿望清单空空如也，快来写下你的愿望吧！</view>
+    </view>
+  </view>
+  <view class='conBox'>
+    <view class='headBox'>
+      <view class='headImg'>
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <view class='colr selectDate'>
+        <view class="section">
+          <!-- <view class="section__title">日期选择器</view> -->
+          <picker mode="date" value="{{date}}" end="{{today}}" bindchange="bindDateChange">
+            <view class="colr selectDate picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class='col9 userName'>@
+      <open-data type="userNickName" class="userinfo-nickname"></open-data>
+    </view>
+  </view>
+
+  <view class='writeBox'>
+    <!-- 填写按钮为空时 -->
+    <view bindtap='showModel' wx:if="{{wishCon==true}}" class='writeBtnBox'>
+      <button class='subBtn' style='color:#fff;background:{{bgBtn}}' disabled="{{disabled}}">填写愿望</button>
+    </view>
+    <!-- 展示完整内容 -->
+    <view class="wishList" wx:else>
+      <block wx:for="{{wishText}}" wx:key="{{index}}">
+        <view class="col-3 wishItem">
+          <view>
+            {{index+1}}.{{item.wishText}}
+          </view>
+          <!-- <view class='editItemBox' catchtap='editItem' data-id="{{item.id}}" data-index="{{index}}">
+            <view class='iconCenter'>
+              <image class="editIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417032908409737018.png'></image>
+            </view>
+          </view> -->
+        </view>
+      </block>
+      <!-- <view class="col-3 wishItem">2.生日那天可以跟女神去悦色吃饭</view> -->
+      <view class='col9 createTime'>*创建时间 {{createTime}}</view>
+
+      <view class='wishFooterBox'>
+        <view class="wishFooter">
+          <view class="clearnWish" bindtap='deleteBirthdayWish'>清空愿望</view>
+          <view class="colf bg-col shareWish" bindtap='shareWish'>分享愿望</view>
+        </view>
+      </view>
+      <view class='editIconBox' bindtap='editWish'>
+        <view class='iconCenter'>
+          <image class="editIcon" src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417032908409737018.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='isnull'></view>
+</view>
+<!-- 愿望弹窗 -->
+<view class='bgModel' wx:if="{{chooseSize}}">
+  <view class="model" animation="{{animationData}}">
+    <view class='use'>
+      <view>
+        <view class='close'>
+          <view class="col-3 modelTitle">生日愿望</view>
+          <image class='closeIcon' bindtap='hideModal' src='https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190417033852909504763.png'></image>
+        </view>
+        <view>
+          <textarea placeholder='在这里输入你的生日愿望' maxlength='19' placeholder-style='color:#999999' bindinput="birWish" class='area'></textarea>
+        </view>
+        <view class="modelBom">
+          <view class='bg-col colf cancelBtn' bindtap='completeBir'>完成</view>
+          <!-- <view class='bg-col colf cancelBtn' bindtap='updatecompleteBir' wx:else>完成</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

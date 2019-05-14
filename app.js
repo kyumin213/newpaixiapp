@@ -1,4 +1,5 @@
 //app.js
+import agriknow from './utils/agriknow.js'
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -39,5 +40,6 @@ App({
     baseUrl: 'https://api.prise.shop/',
     token: 'paixi_123',
     userPhone: ''
-  }
+  },
+  agriknow: new agriknow()
 })

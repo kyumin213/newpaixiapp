@@ -1,0 +1,223 @@
+<!--pages/me/bargainStatus/bargainStatus.wxml-->
+<view>
+  <!-- 状态 -->
+  <view class="statusList">
+    <view class="col3 fz32 {{currentTab==0?'active':''}}" data-current="0" bindtap='coachTab'>
+      全部
+      <text class="{{currentTab==0?'onShow':''}} "></text>
+    </view>
+    <view class="col3 fz32 {{currentTab==1?'active':''}}" data-current="1" bindtap='coachTab'>已完成
+      <text class="{{currentTab==1?'onShow':''}} "></text>
+    </view>
+    <view class="col3 fz32 {{currentTab==2?'active':''}}" data-current="2" bindtap='coachTab'>进行中
+      <text class="{{currentTab==2?'onShow':''}} "></text>
+    </view>
+    <view class="col3 fz32 {{currentTab==3?'active':''}}" data-current="3" bindtap='coachTab'>已结束
+      <text class="{{currentTab==3?'onShow':''}} "></text>
+    </view>
+  </view>
+  <!-- 商品列表 -->
+
+  <swiper current="{{currentTab}}" class="swiper" duration="300" bindchange="switchTab" style="height:{{winHeight?winHeight+'px':'auto'}}">
+    <!-- 全部 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scoll-h'>
+        <view class='productList' wx:if="{{allItem}}">
+          <view class='items' catchtap='bargainDetails'>
+            <view class='ptoductItems'>
+              <view class="itemTitle">
+                <view class="col9 fz26">2019-05-10 23:09:08</view>
+                <view class="statusTxt">已完成</view>
+              </view>
+              <view class='itemCen'>
+                <view class='itemLeft'>
+                  <view>
+                    <image class="imgs"></image>
+                  </view>
+                  <view class='proDes'>
+                    <view class='col3 fz28 names'>vivo x27 雀羽蓝&粉黛金</view>
+                    <view class='fz26 col9'>粉黛金（这里是规格）</view>
+                  </view>
+                </view>
+                <view>
+                  <view class='fz28 col3'>￥1.00</view>
+                  <view class='fz26 col9 oldPrice'>￥1980</view>
+                </view>
+              </view>
+              <view class='itemBom'>
+                <view class='fz26 col3'>支付截止：
+                  <text>05-12 23:09:08</text>
+                </view>
+                <view class='fz28 col3'>需支付:
+                  <text class='colr fz28'>￥1.00</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='items'>
+            <view class='ptoductItems'>
+              <view class="itemTitle">
+                <view class="col9 fz26">2019-05-10 23:09:08</view>
+                <view class="statusTxt">已完成</view>
+              </view>
+              <view class='itemCen'>
+                <view class='itemLeft'>
+                  <view>
+                    <image class="imgs"></image>
+                  </view>
+                  <view class='proDes'>
+                    <view class='col3 fz28 names'>vivo x27 雀羽蓝&粉黛金</view>
+                    <view class='fz26 col9'>粉黛金（这里是规格）</view>
+                  </view>
+                </view>
+                <view>
+                  <view class='fz28 col3'>￥1.00</view>
+                  <view class='fz26 col9 oldPrice'>￥1980</view>
+                </view>
+              </view>
+              <view class='itemBom'>
+                <view class='fz26 col3'>支付截止：
+                  <text>05-12 23:09:08</text>
+                </view>
+                <view class='fz28 col3'>需支付:
+                  <text class='colr fz28'>￥1.00</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='empty-order' wx:else>
+          <image src='https://image.prise.shop/images/2018/07/25/1532520772105459.png'></image>
+          <text>暂无订单</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 已完成 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scoll-h'>
+        <view class='productList' wx:if="{{completed}}">
+          <view class='items' catchtap='bargainDetails'>
+            <view class='ptoductItems'>
+              <view class="itemTitle">
+                <view class="col9 fz26">2019-05-10 23:09:08</view>
+                <view class="statusTxt">已完成</view>
+              </view>
+              <view class='itemCen'>
+                <view class='itemLeft'>
+                  <view>
+                    <image class="imgs"></image>
+                  </view>
+                  <view class='proDes'>
+                    <view class='col3 fz28 names'>vivo x27 雀羽蓝&粉黛金</view>
+                    <view class='fz26 col9'>粉黛金（这里是规格）</view>
+                  </view>
+                </view>
+                <view>
+                  <view class='fz28 col3'>￥1.00</view>
+                  <view class='fz26 col9 oldPrice'>￥1980</view>
+                </view>
+              </view>
+              <view class='itemBom'>
+                <view class='fz26 col3'>支付截止：
+                  <text>05-12 23:09:08</text>
+                </view>
+                <view class='fz28 col3'>需支付:
+                  <text class='colr fz28'>￥1.00</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='empty-order' wx:else>
+          <image src='https://image.prise.shop/images/2018/07/25/1532520772105459.png'></image>
+          <text>暂无订单</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 进行中 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scoll-h'>
+        <view class='productList' wx:if="{{progress}}">
+          <view class='items' catchtap='bargainDetails'>
+            <view class='ptoductItems'>
+              <view class="itemTitle">
+                <view class="col9 fz26">2019-05-10 23:09:08</view>
+                <view class="statusTxt">进行中</view>
+              </view>
+              <view class='itemCen'>
+                <view class='itemLeft'>
+                  <view>
+                    <image class="imgs"></image>
+                  </view>
+                  <view class='proDes'>
+                    <view class='col3 fz28 names'>vivo x27 雀羽蓝&粉黛金</view>
+                    <view class='fz26 col9'>粉黛金（这里是规格）</view>
+                  </view>
+                </view>
+                <view>
+                  <view class='fz28 col3'>￥1.00</view>
+                  <view class='fz26 col9 oldPrice'>￥1980</view>
+                </view>
+              </view>
+              <view class='itemBom'>
+                <view class='fz26 col3'>支付截止：
+                  <text>05-12 23:09:08</text>
+                </view>
+                <view class='fz28 col3'>需支付:
+                  <text class='colr fz28'>￥1.00</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='empty-order' wx:else>
+          <image src='https://image.prise.shop/images/2018/07/25/1532520772105459.png'></image>
+          <text>暂无订单</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 已结束 -->
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scoll-h'>
+        <view class='productList' wx:if="{{hasEnded}}">
+          <view class='items' catchtap='bargainDetails'>
+            <view class='ptoductItems'>
+              <view class="itemTitle">
+                <view class="col9 fz26">2019-05-10 23:09:08</view>
+                <view class="statusTxt">已结束</view>
+              </view>
+              <view class='itemCen'>
+                <view class='itemLeft'>
+                  <view>
+                    <image class="imgs"></image>
+                  </view>
+                  <view class='proDes'>
+                    <view class='col3 fz28 names'>vivo x27 雀羽蓝&粉黛金</view>
+                    <view class='fz26 col9'>粉黛金（这里是规格）</view>
+                  </view>
+                </view>
+                <view>
+                  <view class='fz28 col3'>￥1.00</view>
+                  <view class='fz26 col9 oldPrice'>￥1980</view>
+                </view>
+              </view>
+              <view class='itemBom'>
+                <view class='fz26 col3'>支付截止：
+                  <text>05-12 23:09:08</text>
+                </view>
+                <view class='fz28 col3'>需支付:
+                  <text class='colr fz28'>￥1.00</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='empty-order' wx:else>
+          <image src='https://image.prise.shop/images/2018/07/25/1532520772105459.png'></image>
+          <text>暂无订单</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+</view>

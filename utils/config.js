@@ -1,9 +1,10 @@
-
 //线上环境
 var lsjHost = 'https://testapi.prise.shop';
 //  var lsjHost = 'https://api.prise.shop';
 
 var config = {
+  // 添加生日
+  addBirthday: `${lsjHost}/user/birthday/add`,
   // 获取首页资源
   getIndex: `${lsjHost}/major/index`,
   // 获取首页 改版
@@ -89,6 +90,8 @@ var config = {
   postAddGift: `${lsjHost}/cart/gift/add`,
   // 查看知礼购物车
   getGiftCar: `${lsjHost}/cart/gift/get`,
+  // 从知礼购物车中删除一个商品
+  postDeleteGiftCar: `${lsjHost}/cart/gift/remove`,
   // 知礼购物车数量修改
   postModifyGiftNum: `${lsjHost}/cart/gift/modify/num`,
   // 知礼支付订单 

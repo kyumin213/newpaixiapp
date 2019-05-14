@@ -1,0 +1,42 @@
+/* pages/receiveGift/receiveGift.wxss */
+@import '../packWell/packWell.wxss';
+
+.receiveBtn {
+  margin: 78rpx 42rpx 92rpx 42rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  border-radius: 40rpx;
+}
+
+.bgc {
+  background: #ddd;
+}
+/* 领取成功 */
+.successBox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+}
+.successCon{
+text-align: center;
+}
+.giftIcon{
+  width: 160rpx;
+  height: 208rpx;
+  margin: 194rpx 0 36rpx 0;
+}
+.btnList{
+  display: flex;
+  justify-content: center;
+}
+.txts{
+  margin: 32rpx auto 102rpx auto;
+}
+.strollBg{
+  background: #FFB45C;
+  margin-right: 50rpx;
+}

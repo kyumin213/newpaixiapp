@@ -1,0 +1,4 @@
+<!--pages/pictures/pictures.wxml-->
+<view class='imgBox'>
+  <image class="img" src="https://prise-picture.oss-cn-shenzhen.aliyuncs.com/20190419064631889586045.png"></image>
+</view>

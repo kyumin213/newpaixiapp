@@ -1,0 +1,133 @@
+/* pages/me/bargainStatus/bargainStatus.wxss */
+
+/* 顶部状态 */
+
+page {
+  width: 100%;
+  height: 100%;
+  background: #f6f6f6;
+}
+
+.statusList {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100rpx;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.statusList view {
+  line-height: 70rpx;
+  position: relative;
+}
+
+.active {
+  /* width: 90%;
+  height: 4rpx;
+  background: #FD6592; */
+  border-bottom: 4rpx solid #fd6592;
+  /* padding-bottom: 30rpx; */
+  box-sizing: border-box;
+}
+
+.onShow {
+  display: inline-block;
+  position: absolute;
+  top: 10rpx;
+  right: -20rpx;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 100%;
+  background: #fd6592;
+}
+
+/* 商品列表 */
+
+.swiper {
+  height: auto;
+  overflow-y: auto;
+  margin-top: 100rpx;
+}
+
+.scoll-h {
+  height: 100%;
+}
+.items{
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.ptoductItems{
+  /* width: 100%; */
+  background: #fff;
+  height: 380rpx;
+  margin: 0 40rpx;
+}
+.itemTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin: 0 40rpx; */
+  box-sizing: border-box;
+  height: 100rpx;
+  border-bottom: 2rpx solid #DEDEDE;
+}
+.itemCen{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 180rpx;
+}
+.imgs{
+  width: 126rpx;
+  height: 126rpx;
+  background: #DEDEDE;
+}
+.names{
+  margin-bottom: 24rpx;
+}
+.itemBom{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  border-top: 2rpx solid #DEDEDE;
+}
+.itemLeft{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.proDes{
+  margin-left: 36rpx;
+}
+.oldPrice{
+  margin-top: 20rpx;
+  text-decoration: line-through;
+}
+.statusTxt{
+  color: #FFB45C;
+  font-size: 28rpx;
+}
+.empty-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.empty-order image {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 232rpx 0 48rpx;
+}
+.empty-order text {
+  color: #999;
+  font-size: 30rpx;
+}

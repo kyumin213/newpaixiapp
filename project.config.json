@@ -12,6 +12,8 @@
 	"appid": "wxabf48c687da2ad9e",
 	"projectname": "wx-paixi-v3.0.0",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

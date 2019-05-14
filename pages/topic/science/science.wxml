@@ -1,0 +1,26 @@
+<!--pages/topic/science/science.wxml-->
+<view>
+  <view class="imgBox">
+    <image  class='topImg' src='{{topImg}}' lazy-load='true'></image>
+  </view>
+  <view class='scienceTit'>
+    <view class="col3 fw title">{{name}}节日科普</view>
+    <view class="disFlex">
+      <view>
+        <image class="timeIcon" src='../../../images/dateL.png'></image>
+      </view>
+      <view class="colr times">{{beginTime}}</view>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view>
+    <view class="col6 scienceDes">{{festText}}</view>
+  </view>
+  <!-- 底部 -->
+  <view class='footer'>
+    <view class="footerList">
+      <view class="col6 backBtn" bindtap='back'>返回推荐</view>
+      <button class="bg-col colf shareBtn" open-type='share'>分享科普</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+/* pages/index/Bargain/Bargain.wxss */
+@import '../../topic/topicDetails/topicDetails.wxss';
+.topBg{
+  background: #FD6592;
+}
+.topBom{
+  margin-top: 150rpx;
+}
+.mb{
+  margin-bottom: 20rpx;
+}
+.itemImg{
+  background: #ccc;
+}

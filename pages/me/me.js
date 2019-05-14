@@ -71,6 +71,22 @@ Page({
     })
   },
   /**
+   * 一元送礼
+   */
+  bargain:function(){
+    wx.navigateTo({
+      url: '/pages/me/bargainStatus/bargainStatus',
+    })
+  },
+  /**
+   * 生日愿望
+   */
+  birthdayWish:function(){
+    wx.navigateTo({
+      url: '/pages/index/birthdayWish/birthdayWish',
+    })
+  },
+  /**
    * 去到我的钱包
    */
   goMoneyPackage: function () {

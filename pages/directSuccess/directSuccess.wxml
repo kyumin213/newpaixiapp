@@ -1,0 +1,14 @@
+<!--pages/directSuccess/directSuccess.wxml-->
+<view class='successBox'>
+  <view class='successCon'>
+    <view>
+      <image class='giftIcon' src='../../images/giftIcon.png'></image>
+    </view>
+    <view class='colr fw fz36'>礼物领取成功</view>
+    <view class='col9 fz26 txts'>小派正在加速为您打包礼品！</view>
+    <view class='btnList'>
+      <view class="fz30 btnItem strollBg" bindtap='toIndex'>逛逛派喜</view>
+      <view class="fz30 paybtnItem bg-col" bindtap='goBack'>返回领礼页</view>
+    </view>
+  </view>
+</view>

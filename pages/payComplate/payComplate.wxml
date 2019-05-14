@@ -1,0 +1,110 @@
+<!--pages/payComplate/payComplate.wxml-->
+<view class='container'>
+  <view class='bgTop'>
+    <view class='topTxt'>
+      <view class='fw fz36 colf'>礼物已备好</view>
+      <view class='colf mt20'>订单支付成功，赶紧发给好友填写地址吧！</view>
+    </view>
+  </view>
+  <view class='box2'>
+    <view class='headImg'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class='fz30 col3 userNames'>
+      <open-data type="userNickName" class="userinfo-nickname"></open-data>送出{{nums}}份礼物
+    </view>
+    <view class='sayBox'>
+      <view class='sayLeft'>
+        <image class='yhIcon' src='../../images/wsrleft.png' wx:if="{{sayStatus==true}}"></image>
+        <image class='yhIcon' src='../../images/ysrleft.png' wx:else></image>
+      </view>
+      <view class='sayDes'>
+        <view class='col3 fz30 sayComplate' wx:if="{{sayStatus==false}}">{{sayCon}}</view>
+        <input class='col3 fz30 sayTxt' wx:else maxlength='90' placeholder-style='color:#999' bindblur='sayStatus' placeholder='你还想对Ta说'>
+        </input>
+      </view>
+      <view class='sayRight'>
+        <image class='yhIcon' src='../../images/wsrright.png' wx:if="{{sayStatus==true}}"></image>
+        <image class='yhIcon' src='../../images/ysrright.png' wx:else></image>
+      </view>
+    </view>
+  </view>
+  <view class='box3'>
+    <block wx:for="{{itemList}}" wx:key="{{index}}">
+      <view class='imgItem'>
+        <view>
+          <image class='giftImg' src='{{item.productPicture}}'></image>
+        </view>
+        <view>
+          <view class='fz30 col3 goodName'>{{item.productTitle}}</view>
+          <view class='goodNum'>共{{item.num}}份</view>
+        </view>
+      </view>
+    </block>
+    <view class='btnList'>
+      <view class='fz30 btnItem bgc' bindtap='joinDirect'>自己收礼</view>
+      <view class='fz30 paybtnItem bg-col' catchtap='showModel'>送Ta好礼</view>
+    </view>
+    <view class='col9 tc'>* 温馨提示：礼物卡超过15天未领取，将自动退款</view>
+  </view>
+     <!--填写地址弹框  -->
+    <block wx:if="{{isShowDialog}}">
+      <view class='address-dialog'>
+        <view class='mask' catchtouchmove='true' bindtap='toggleDialog'></view>
+        <view class='address-container' catchtouchmove='true'>
+          <image src='../../images/gift_addresspop_shutdown.png' class='close' bindtap='toggleDialog'></image>
+          <view class='dialog-header'>请确认收货地址哟！</view>
+          <view class='form-group'>
+            <view class='label'>姓名</view>
+            <input type='text' placeholder='姓名' value='{{username}}' placeholder-style="color:#ccc;" bindinput='bindNameInput'></input>
+          </view>
+          <view class='line-dialog'></view>
+          <view class='form-group'>
+            <view class='label'>手机号码</view>
+            <input type='number' placeholder='请输入手机号' value='{{userphone}}' placeholder-style="color:#ccc;" bindinput='bindPhoneInput'></input>
+          </view>
+          <view class='line-dialog'></view>
+          <view class='form-group'>
+            <view class='label address'>详细地址</view>
+            <textarea catchtouchmove='true' placeholder="详细地址" value='{{addressDetail}}' placeholder-style="color:#ccc;" fixed="true" bindinput='bindAddressInput'></textarea>
+          </view>
+          <block wx:if="{{!hasAddress}}">
+            <view class='confirm-address' bindtap='confirmAddress'>确认地址</view>
+          </block>
+          <block wx:else>
+            <view class='btn500  save fl' bindtap='joinGame'>确认</view>
+            <view class='btn500  modify fr' bindtap='modifyAddress'>修改</view>
+          </block>
+        </view>
+      </view>
+    </block>
+  <!-- 弹窗 -->
+  <view class='bgModel' wx:if="{{chooseSize}}">
+    <view class="model" animation="{{animationData}}">
+      <view class='modelCon'>
+        <view class='conList'>
+          <view>
+            <button class='btnBg' open-type='share'>
+              <view class='imgBg'>
+                <image class='iconItem' src='../../images/wxIcon.png'></image>
+              </view>
+              <view class='col3 fz26' open-type='share'>微信好友</view>
+            </button>
+          </view>
+          <view bindtap='saveCardPic'>
+            <view class='imgBg'>
+              <image class='iconItem' src='../../images/scImg.png'></image>
+            </view>
+            <view class='col3 fz26'>生成图片</view>
+          </view>
+        </view>
+        <view class='col3 fz30 cancelBtn' catchtap='hideModal'>取消</view>
+      </view>
+    </view>
+  </view>
+  <view class='canvas-box'>
+    <block wx:if="{{isShowCanvas}}">
+      <canvas canvas-id="shareCanvas" style="width:{{winWidth}};height:{{winHeight}}"></canvas>
+    </block>
+  </view>
+</view>

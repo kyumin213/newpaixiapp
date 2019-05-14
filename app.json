@@ -1,25 +1,52 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/bargainPackWell/bargainPackWell",
+    "pages/me/bargainStatus/bargainStatus",
+    "pages/index/BargainDetails/BargainDetails",
+    "pages/index/helpDetails/helpDetails",
     "pages/me/me",
+    "pages/index/bargainProductDetails/bargainProductDetails",
     "pages/topic/topic",
-    "pages/wallet/wallet",
+    "pages/topic/science/science",
+    "pages/index/shareWish/shareWish",
+    "pages/index/shareBargain/shareBargain",
+    "pages/login/login",
+    "pages/giftRecommend/giftRecommend",
+    "pages/index/birthdayWish/birthdayWish",
+    "pages/giftRecommend/commodityDetails/commodityDetails",
+    "pages/index/Bargain/Bargain",
+    "pages/packWell/packWell",
+    "pages/chooingsGif/chooingsGif",
+    "pages/topic/topicDetails/topicDetails",
+    "pages/directReceiver/directReceiver",
+    "pages/directSuccess/directSuccess",
+    "pages/giftsCardReceiver/giftsCardReceiver",
+    "pages/haveReceiveGift/haveReceiveGift",
+    "pages/recordReceived/recordReceived",
+    "pages/chooingsGif/screeningGifts/screeningGifts",
+    "pages/giftRecordReceive/giftRecordReceive",
     "pages/walletDetails/walletDetails",
+    "pages/receiveGift/receiveGift",
+    "pages/payComplate/payComplate",
+    "pages/topic/productDetails/productDetails",
+    "pages/giftCard/giftCard",
+    "pages/giftCardStatus/giftCardStatus",
+    "pages/pictures/pictures",
+    "pages/wallet/wallet",
     "pages/walletExchange/walletExchange",
     "pages/walletExchangeResult/walletExchangeResult",
     "pages/walletGetCash/walletGetCash",
     "pages/walletGetCashResult/walletGetCashResult",
     "pages/couponList/couponList",
     "pages/recordSendOut/recordSendOut",
-    "pages/recordReceived/recordReceived",
     "pages/recordJoin/recordJoin",
     "pages/giftRecordJoin/giftRecordJoin",
     "pages/giftRecordDetails/giftRecordDetails",
-    "pages/giftRecordReceive/giftRecordReceive",
     "pages/logistics/logistics",
     "pages/special/special",
     "pages/productDetails/productDetails",
-    "pages/login/login"
+    "pages/bindPhone/bindPhone"
   ],
   "subpackages": [
     {
@@ -36,7 +63,7 @@
         "pages/activityDiceHelp/activityDiceHelp",
         "pages/activityPintu/activityPintu",
         "pages/activityPintuHelp/activityPintuHelp",
-        "pages/activityAnswer/activityAnswer",        
+        "pages/activityAnswer/activityAnswer",
         "pages/activityAnswerGameCenter/activityAnswerGameCenter",
         "pages/assistanceActivityAnswer/assistanceActivityAnswer",
         "pages/activityResult/activityResult"
@@ -53,27 +80,28 @@
   },
   "tabBar": {
     "color": "#CCCCCC",
-    "selectedColor": "#333333",
+    "selectedColor": "#333",
     "backgroundColor": "#ffffff",
     "list": [
       {
         "selectedIconPath": "icon/home-on.png",
         "iconPath": "icon/home.png",
         "pagePath": "pages/index/index",
-        "text": "派喜"
+        "text": "首页"
       },
       {
-        "selectedIconPath": "icon/cart-on.png",
-        "iconPath": "icon/cart.png",
+        "selectedIconPath": "icon/find-on.png",
+        "iconPath": "icon/find.png",
         "pagePath": "pages/topic/topic",
         "text": "专题"
       },
       {
-        "selectedIconPath": "icon/user-on.png",
-        "iconPath": "icon/user.png",
+        "selectedIconPath": "icon/me-on.png",
+        "iconPath": "icon/me.png",
         "pagePath": "pages/me/me",
-        "text": "我的"
+        "text": "个人中心"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

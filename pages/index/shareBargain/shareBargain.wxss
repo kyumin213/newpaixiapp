@@ -1,0 +1,13 @@
+/* pages/index/shareBargain/shareBargain.wxss */
+@import '../../topic/science/science.wxss';
+.topImg{
+  background: #FD6592;
+}
+.bargainTit{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 112rpx;
+  margin:0 52rpx;
+  border-bottom: 2rpx solid #DEDEDE;
+}
